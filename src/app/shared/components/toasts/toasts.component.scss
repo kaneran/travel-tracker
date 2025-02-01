@@ -1,0 +1,48 @@
+#toast{
+    animation: fadein 2s, fadeout 5s 2s;
+    width: 20rem;
+    text-align: center;
+    background-color: #8dd78d;
+    border-radius: 0.5rem;
+    position:absolute;
+    // opacity: 0;
+}
+
+#toast.success{
+    background-color: #8dd78d;
+}
+
+#toast.error{
+    background-color: #dd6060;
+}
+
+#toast p.success{
+    color: #0b5e1a;
+}
+
+#toast p.error{
+    color: #5b0202;
+}
+
+#toast.warning{
+    background-color: #ead96d;
+}
+
+#toast p.warning{
+    color: #9b7b04;
+}
+
+@keyframes fadein{
+    from{opacity: 0; bottom: 0;}
+    to{opacity: 1; bottom: 20px;}
+}
+
+@keyframes fadeout{
+    from{opacity: 1; bottom: 20px;}
+    to{opacity: 0; bottom: 0;}
+}
+
+#toasts{
+    display: flex;
+    justify-content: center;
+}

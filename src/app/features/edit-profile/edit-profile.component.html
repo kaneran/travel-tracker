@@ -1,0 +1,6 @@
+<app-page-tabs [tabs]="tabs" (selectedTab)="handleTabSelected($event)"></app-page-tabs>
+@if(tabSelected=='Profile'){
+    <app-profile/>
+} @else{
+    <app-places-visited/>
+}

@@ -1,0 +1,108 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// form{
+//     // width:50%
+// }
+
+button{
+    margin:0.5rem;
+    width: 11rem;
+    height: 3rem;
+}
+
+#placeVisitedRecord{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border:#5271ff;
+    border-style: solid;
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+    border-radius: 0.5rem;
+    height:4rem;
+}
+
+select, input{
+    background: transparent;
+    color:white;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: medium;
+    border-radius: 0.3rem;
+    margin-right: 0.75rem;
+    width:19rem;
+}
+
+select option{
+    background: #070d29;
+}
+
+.delete{
+    width: 2rem;
+    // height: 2rem;
+    background: #ff3131;
+    border: none;
+    border-radius: 5px;
+    color:white;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+.delete:hover{
+    background: #e64040;
+}
+
+input.error{
+    border-color:#e64040;
+}
+
+@media (max-width: 475px) {
+  p{
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 1536px) {
+    .header{
+        font-size:4rem;
+    }
+
+    .body{
+    font-size: 1.25rem;
+    }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+    select, input{
+    width:18rem;
+}
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    select, input{
+    width:12rem;
+}
+
+}
+
+/* md */
+@media (max-width: 768px) {
+    select, input{
+    width:6rem;
+}
+
+@media (max-width: 480px) {
+    select, input{
+    width:5.5rem;
+}
+}
+}

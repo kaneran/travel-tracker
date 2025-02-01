@@ -1,0 +1,5 @@
+<div class="tab">
+    @for(tab of tabs; track tab.name){
+        <button class="tablinks" (click)="handleTabSelectedEvent(tab.name)" [class.active]="tabSelected == undefined && tab.name == tabs[0].name|| tabSelected==tab.name ">{{tab.name}}</button>
+    }
+</div>
