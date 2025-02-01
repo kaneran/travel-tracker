@@ -1,0 +1,34 @@
+<div id="mainContainer">
+    <div id="goalsSection">
+        <div id="profileSection">
+            <img id="profilePic" src={{auth.currentUser?.photoURL}}>
+            <div id="statsSection">
+                <div id="statsHeaderSection">
+                <h1 id="profileName">{{auth.currentUser?.displayName}}</h1>
+                <button class="button" (click)="editProfile()">EDIT PROFILE</button>
+                </div>
+                <p>{{userStats?.role}}</p>
+                <div id="goalsSection">
+                    <div>
+                        <app-progress-bar [score]="70" [title]="countriesGoalTitle"></app-progress-bar>
+                        <app-progress-bar [score]="45" [title]="placesGoalTitle"></app-progress-bar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="placesVisitedSection">
+        <h1>Places Visited</h1>
+        <div id="placesVisited">
+            @for(item of userStats?.countries_visited; track item){
+                <div id="placeVisited">
+                <img src="../../assets/flags/{{item.alpha2}}.svg" class="flag"/>
+                <p>{{item.country_name}}</p>
+                <p>{{item.date_visited}}</p>
+            </div>
+            }
+            
+        </div>
+    </div>
+</div>
+

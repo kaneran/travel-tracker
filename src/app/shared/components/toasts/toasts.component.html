@@ -1,0 +1,5 @@
+<div *ngFor="let toast of toastService.toasts; let i=index" id="toasts">
+    <div id="toast" [ngClass]="toast.type">
+        <p [ngClass]="toast.type">{{toast.message}}</p>
+    </div>  
+  </div>

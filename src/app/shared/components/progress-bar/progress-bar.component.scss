@@ -1,0 +1,64 @@
+.progressBar{
+    width: 10rem;
+    height: 1rem;
+    appearance: none;
+    border-radius: 1rem;    
+}
+
+#progressWrapper{
+    width: 600px;
+    height: 20px;
+    background-color: grey;
+    display:flex;
+    border-radius: 1rem;
+    margin-left:1rem;
+}
+
+#progressMade{
+    height: inherit;
+    background-color: rgb(23, 243, 3);
+    border-radius: inherit;
+}
+
+#progressBar{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1536px) {
+    #progressWrapper{
+        width:500px;
+    }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+    #progressWrapper{
+        width:400px;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+}
+
+/* md */
+@media (max-width: 768px) {
+    #progressWrapper{
+        width:300px;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    #progressWrapper{
+        width:150px;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    #progressWrapper{
+        width:100px;
+    }
+}

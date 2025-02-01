@@ -1,0 +1,22 @@
+<div id="container">
+<h1>Places visited</h1>
+    <form [formGroup]="placesVisitedForm">
+       <div formArrayName="placesVisited" *ngFor="let placeVisited of placesVisited.controls; let i=index">
+        <div [formGroupName]="i" id="placeVisitedRecord">
+          <select formControlName="country_visited">
+            <option *ngFor="let country of countries; let y=index" [selected]="country.name === placesVisited.controls[i].value.country_visited">{{country.name}}</option>
+          </select>
+          <input type="text" formControlName="place_visited">
+          <input type="text" formControlName="date_visited" placeholder="DD/MM/YYYY" required>
+          <!-- <p>{{date_visited.valid}}</p> [class]="date_visited.valid ? 'error': ''" -->
+          <button class="delete" (click)="deleteRecord(i)">X</button>
+        </div>
+       </div>
+    </form>
+    <div id="formButtons">
+      <button class="button button-success" (click)="addRecord()">Add</button>
+      <button class="button button-save" (click)="saveChanges()" [disabled]="!placesVisitedForm.valid">Save Changes</button>
+      <button *ngIf="deletedRecord != undefined" class="button" (click)="undoPreviousChange()">Undo</button>
+      <button class="button" (click)="displayModal()">{{placesVisitedForm.valid}}</button>
+    </div>
+</div>

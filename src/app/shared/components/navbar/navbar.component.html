@@ -1,0 +1,8 @@
+  
+  <nav id="container">
+  @if(auth.currentUser == null){
+    <button (click)="Login()" class="button">LOGIN</button>
+  } @else{
+    <button (click)="Logout()" class="button">LOGOUT</button>
+  }
+</nav>
