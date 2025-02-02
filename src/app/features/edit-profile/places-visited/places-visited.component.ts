@@ -54,9 +54,9 @@ export class PlacesVisitedComponent implements OnInit {
   get formGroup(): FormGroup {
     return this.formBuilder.group({
       action: "",
-      date_visited: this.formBuilder.control(''),
-      country_visited: this.formBuilder.control(''),
-      place_visited: this.formBuilder.control('')
+      date_visited: this.formBuilder.control('', [Validators.required, Validators.pattern("[0-3][0-9]\/[0-1][0-9]\/[0-9][0-9][0-9][0-9]")]),
+      country_visited: this.formBuilder.control('', Validators.required),
+      place_visited: this.formBuilder.control('', Validators.required)
     });
   }
 
@@ -113,12 +113,9 @@ export class PlacesVisitedComponent implements OnInit {
     return result;
   }
 
-  displayModal() {
-    let toast = { message: "Successfully saved", type: ToastType.WARNING } as Toast;
-    this.toastService.addToast(toast);
-    console.log(this.placesVisitedForm);
+  validateInput(placeVisited: any, field: string): boolean {
+    return placeVisited.controls[field].status === "VALID";
   }
-
 }
 
 interface PlaceVisited {

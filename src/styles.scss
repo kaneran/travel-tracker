@@ -100,3 +100,12 @@ h1, p{
 .flag{
     width:3rem;
 }
+
+#inputContainer{
+ height:inherit   
+}
+
+#validationMessage{
+    margin:0.3rem 0 0 0;
+    color: #e64040;
+}
