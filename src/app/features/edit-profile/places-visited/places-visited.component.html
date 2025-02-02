@@ -6,9 +6,14 @@
           <select formControlName="country_visited">
             <option *ngFor="let country of countries; let y=index" [selected]="country.name === placesVisited.controls[i].value.country_visited">{{country.name}}</option>
           </select>
-          <input type="text" formControlName="place_visited">
-          <input type="text" formControlName="date_visited" placeholder="DD/MM/YYYY" required>
-          <!-- <p>{{date_visited.valid}}</p> [class]="date_visited.valid ? 'error': ''" -->
+          <input type="text" formControlName="place_visited" [class]="!validateInput(placeVisited, 'place_visited') ? 'error': ''">
+          <div id="inputContainer">
+          <input type="text" formControlName="date_visited" placeholder="DD/MM/YYYY" required [class]="!validateInput(placeVisited, 'date_visited') ? 'error': ''">
+          @if(!validateInput(placeVisited, 'date_visited')){
+            <p id="validationMessage">Please enter valid date</p>
+          }
+          </div>
+          
           <button class="delete" (click)="deleteRecord(i)">X</button>
         </div>
        </div>
@@ -17,6 +22,6 @@
       <button class="button button-success" (click)="addRecord()">Add</button>
       <button class="button button-save" (click)="saveChanges()" [disabled]="!placesVisitedForm.valid">Save Changes</button>
       <button *ngIf="deletedRecord != undefined" class="button" (click)="undoPreviousChange()">Undo</button>
-      <button class="button" (click)="displayModal()">{{placesVisitedForm.valid}}</button>
+      <!-- <button class="button" (click)="displayModal(placesVisited.controls[0])">{{placesVisitedForm.valid}}</button> -->
     </div>
 </div>
