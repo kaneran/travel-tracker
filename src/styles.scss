@@ -28,6 +28,12 @@ body{
     color:#f3f4f4;
 }
 
+.button-save.disabled{
+    background-color: #9199bb;
+    color:#f3f4f4;
+    cursor: not-allowed;
+}
+
 .header{
     font-size: 5rem;
     margin:unset
