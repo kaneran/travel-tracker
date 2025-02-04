@@ -98,13 +98,13 @@ export class PlacesVisitedComponent implements OnInit {
       positive_note: ""
     } as CountryVisited)) as CountryVisited[];
 
-    console.log(countriesVisited);
-
     response.countries_visited = [...countriesVisited];
 
     const updatedUserStats = await this.travelService.updatePlacesVisited(response) as UserStatDetails;
-    this.placesVisited.clear();
-    this.updatePlacesVisitedForm(updatedUserStats);
+    if (updatedUserStats !== undefined) {
+      this.placesVisited.clear();
+      this.updatePlacesVisitedForm(updatedUserStats);
+    }
   }
 
   region(countryVisited: string): string {
