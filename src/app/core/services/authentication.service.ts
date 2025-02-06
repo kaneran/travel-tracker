@@ -25,9 +25,7 @@ export class AuthenticationService {
   async signInWithGoogle() {
     const credential = signInWithPopup(this.auth, new GoogleAuthProvider());
     //const credential = await signInWithRedirect(auth, new GoogleAuthProvider());
-    await this.loginHandler(credential);
-    const data: UserAPI = { function_name: "getUserStats", payload: null } as UserAPI;
-    await this.travelDataService.invokeUserAPI(data);
+    return await this.loginHandler(credential);
   }
 
   async loginHandler(promise: Promise<UserCredential>) {
@@ -36,12 +34,15 @@ export class AuthenticationService {
       res = await promise;
       const toast = { type: ToastType.SUCCESS, message: "Successfully logged in" } as Toast;
       this.toastService.addToast(toast);
+      const data: UserAPI = { function_name: "getUserStats", payload: null } as UserAPI;
+      await this.travelDataService.invokeUserAPI(data);
+      return res;
     } catch (err) {
       console.log(err);
       const toast = { type: ToastType.ERROR, message: "Something went wrong" } as Toast;
       this.toastService.addToast(toast);
+      return;
     }
-    return res;
   }
 
   async firebaseSignOut() {
