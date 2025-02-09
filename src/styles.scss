@@ -9,6 +9,26 @@ body{
     
 }
 
+.delete{
+    width: 2rem;
+    // height: 2rem;
+    background: #ff3131;
+    border: none;
+    border-radius: 5px;
+    color:white;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+.delete:hover{
+    background: #e64040;
+}
+
+input.error{
+    border-color:#e64040;
+}
+
 .button{
     // font-family: Arial, Helvetica, sans-serif;
     padding: 0.5rem 2rem 0.5rem 2rem;
@@ -32,6 +52,12 @@ body{
     background-color: #9199bb;
     color:#f3f4f4;
     cursor: not-allowed;
+}
+
+#formButtons button{
+    margin:0.5rem;
+    width: 11rem;
+    height: 3rem;
 }
 
 .header{

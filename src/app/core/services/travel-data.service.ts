@@ -78,10 +78,11 @@ export class TravelDataService {
     }
   }
 
-  async updatePlacesVisited(userStat: UserStat) {
+  async updateUserStats(userStat: UserStat) {
     // const userStat = { total_no_countries_visited: 0, total_no_places_visited: 0, countries_visited: [{ country_name: "Dubai", date_visted: "2023-10-29", positive_note: "Architecture, night life" }], goals: [] };
-    const data: UserAPI = { function_name: "updatePlacesVisited", payload: userStat };
+    const data: UserAPI = { function_name: "updateUserStats", payload: userStat };
     const updatedUserStat = await this.invokeUserAPI(data);
+    this.userStatsResponse = updatedUserStat as UserStatDetails;
     return updatedUserStat;
   }
 
@@ -102,6 +103,13 @@ export class TravelDataService {
       this.toastService.addToast(toast);
       return;
     }
+  }
+
+  async getRegion(countryVisited: string) {
+    const countries = await this.getCountries();
+    const alpha = countries.find(c => countryVisited === c.name)?.['alpha-2'];
+    const result = alpha === undefined ? "" : alpha;
+    return result;
   }
 
 }
@@ -139,7 +147,7 @@ export interface UserStatDetails {
 }
 
 
-interface Goal {
+export interface Goal {
   quantity: number,
   age: number,
   countryOrPlace: string
