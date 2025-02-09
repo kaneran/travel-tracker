@@ -4,5 +4,25 @@
         <h2>Goals</h2>
         <div class="bar"></div>
     </div>
-    
+    <form [formGroup]="profileForm">
+        <div formArrayName="goals" *ngFor="let goal of goals.controls; let i=index">
+           <div [formGroupName]="i" id="goalContainer">
+            <p>{{i + 1}}</p>
+            <p>I want to visit</p>
+            <input type=text formControlName="quantity" placeholder="Enter quantity"/>
+            <select formControlName="countryOrPlace" placeholder="Select type">
+                <option>places</option>
+                <option>countries</option>
+            </select>
+            <p>by</p>
+            <input type=text formControlName="age" placeholder="Enter age"/>
+            <button class="delete" (click)="deleteRecord(i)">X</button>
+           </div>
+        </div>
+    </form>
+    <div id="formButtons">
+      <button class="button button-success" (click)="addRecord()">Add</button>
+      <button class="button button-save" (click)="saveChanges()" [disabled]="!profileForm.valid" [class]="!profileForm.valid ? 'disabled' : ''">Save Changes</button>
+      <button *ngIf="deletedRecord != undefined" class="button" (click)="undoPreviousChange()">Undo</button>
+    </div>
 </div>

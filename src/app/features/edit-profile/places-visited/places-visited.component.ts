@@ -29,7 +29,7 @@ export class PlacesVisitedComponent implements OnInit {
     this.placesVisitedForm = this.formBuilder.group({
       placesVisited: this.formBuilder.array([])
     })
-    this.travelService.getUserStats(true).then((userStats) => {
+    this.travelService.getUserStats().then((userStats) => {
       this.userStats = userStats;
       this.updatePlacesVisitedForm(userStats);
     });
@@ -90,6 +90,18 @@ export class PlacesVisitedComponent implements OnInit {
     response.total_no_countries_visited = this.userStats.total_no_countries_visited;
     response.total_no_places_visited = this.userStats.total_no_places_visited;
     let placesVisited = [...this.placesVisitedForm.value.placesVisited] as PlaceVisited[];
+    // let countriesVisited: CountryVisited[] = [];
+    // placesVisited.forEach(async (pv) => {
+    //   let region = await this.travelService.getRegion(pv.country_visited);
+    //   let countryVisited = {
+    //     country_name: pv.country_visited,
+    //     date_visited: pv.date_visited,
+    //     place_visited: pv.place_visited,
+    //     region,
+    //     positive_note: ""
+    //   } as CountryVisited;
+    //   countriesVisited.push(countryVisited);
+    // })
     let countriesVisited = placesVisited.map(pv => ({
       country_name: pv.country_visited,
       date_visited: pv.date_visited,
@@ -98,9 +110,9 @@ export class PlacesVisitedComponent implements OnInit {
       positive_note: ""
     } as CountryVisited)) as CountryVisited[];
 
-    response.countries_visited = [...countriesVisited];
+    response.countries_visited = countriesVisited;
 
-    const updatedUserStats = await this.travelService.updatePlacesVisited(response) as UserStatDetails;
+    const updatedUserStats = await this.travelService.updateUserStats(response) as UserStatDetails;
     if (updatedUserStats !== undefined) {
       this.placesVisited.clear();
       this.updatePlacesVisitedForm(updatedUserStats);

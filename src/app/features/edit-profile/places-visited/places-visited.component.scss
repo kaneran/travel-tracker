@@ -8,11 +8,6 @@
 //     // width:50%
 // }
 
-button{
-    margin:0.5rem;
-    width: 11rem;
-    height: 3rem;
-}
 
 #placeVisitedRecord{
     display: flex;
@@ -44,25 +39,6 @@ select option{
     background: #070d29;
 }
 
-.delete{
-    width: 2rem;
-    // height: 2rem;
-    background: #ff3131;
-    border: none;
-    border-radius: 5px;
-    color:white;
-    font-family: "Teko", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-}
-
-.delete:hover{
-    background: #e64040;
-}
-
-input.error{
-    border-color:#e64040;
-}
 
 @media (max-width: 475px) {
   p{
