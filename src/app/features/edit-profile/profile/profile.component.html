@@ -7,15 +7,15 @@
     <form [formGroup]="profileForm">
         <div formArrayName="goals" *ngFor="let goal of goals.controls; let i=index">
            <div [formGroupName]="i" id="goalContainer">
-            <p>{{i + 1}}</p>
-            <p>I want to visit</p>
-            <input type=text formControlName="quantity" placeholder="Enter quantity"/>
+            <p class="goalText">{{i + 1}}.</p>
+            <p class="goalText">I want to visit</p>
+            <input type=text formControlName="quantity" placeholder="30"/>
             <select formControlName="countryOrPlace" placeholder="Select type">
                 <option>places</option>
                 <option>countries</option>
             </select>
-            <p>by</p>
-            <input type=text formControlName="age" placeholder="Enter age"/>
+            <p class="goalText">by age</p>
+            <input type=text formControlName="age" placeholder="30"/>
             <button class="delete" (click)="deleteRecord(i)">X</button>
            </div>
         </div>

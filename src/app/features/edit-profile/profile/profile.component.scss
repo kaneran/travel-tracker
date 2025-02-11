@@ -1,36 +1,110 @@
-#goalsContainer{
+#goalsContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#container{
-    display:flex;
+#container {
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#goalContainer{
-    display:flex;
+#goalContainer {
+    display: flex;
     justify-content: space-evenly;
+    margin-bottom: 1rem;
+    align-items: center;
 }
 
-form{
-    width:70%
+form {
+    width: 70%
 }
 
-input{
+input {
     width: 5rem;
     font-size: 1.5rem;
     background: transparent;
-    color:white;
+    color: white;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+
+select {
+    width: 10rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: white;
     border-radius: 0.3rem;
 }
 
-select{
-    width: 8rem;
+.goalText {
     font-size: 1.5rem;
-    background: transparent;
-    color:white;
-    border-radius: 0.3rem;
+}
+
+
+@media (max-width: 475px) {}
+
+@media (max-width: 1536px) {}
+
+/* xl */
+@media (max-width: 1280px) {
+
+    input {
+        width: 3rem;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    input {
+        width: 3rem;
+    }
+
+    form {
+        width: 85%;
+    }
+
+}
+
+/* md */
+@media (max-width: 768px) {
+    input {
+        width: 2rem;
+        font-size: 1.25rem;
+    }
+
+    select {
+        width: 7rem;
+        font-size: 1.25rem;
+    }
+
+    .goalText {
+        font-size: 1rem;
+    }
+
+    form {
+        width: 95%
+    }
+}
+
+@media (max-width: 480px) {
+    input {
+        width: 1.5rem;
+        font-size: 1rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    select {
+        width: 6rem;
+        font-size: 1rem;
+    }
+
+    .goalText {
+        font-size: 1rem;
+    }
+
 }
