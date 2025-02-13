@@ -44,13 +44,7 @@ select, input{
 }
 
 @media (max-width: 1536px) {
-    // .header{
-    //     font-size:4rem;
-    // }
-
-    // .body{
-    // font-size: 1.25rem;
-    // }
+    
 }
 
 /* xl */
@@ -75,8 +69,16 @@ select, input{
 }
 
 @media (max-width: 480px) {
-    select, input{
+    input{
+    width:5rem;
+}
+
+    select{
     width:5.5rem;
 }
+
+    #formButtons{
+        text-align: center;
+    }
 }
 }
