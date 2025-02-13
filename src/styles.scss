@@ -70,6 +70,13 @@ input.error {
     margin: unset;
 }
 
+.bar {
+    background-color: #f3f4f4;
+    height: 0.2rem;
+    width: 80%;
+    margin-left: 0.5rem;
+}
+
 h1,
 p,
 button,
@@ -86,19 +93,6 @@ h2 {
     color: #f3f4f4;
 }
 
-@media (max-width: 475px) {
-    .button {
-        font-size: 1rem;
-    }
-
-    h1 {
-        font-size: 1.25rem;
-    }
-
-    p {
-        font-size: 0.75rem;
-    }
-}
 
 @media (max-width: 1536px) {
     .header {
@@ -135,6 +129,20 @@ h2 {
     }
 }
 
+@media (max-width: 475px) {
+    .button {
+        font-size: 1rem;
+    }
+
+    h1, h2 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+}
+
 .flag {
     width: 3rem;
 }
@@ -148,12 +156,6 @@ h2 {
     color: #e64040;
 }
 
-.bar {
-    background-color: #f3f4f4;
-    height: 0.2rem;
-    width: 81rem;
-    margin-left: 0.5rem;
-}
 
 select option {
     background: #070d29;
