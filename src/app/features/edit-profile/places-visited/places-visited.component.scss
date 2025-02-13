@@ -1,30 +1,31 @@
-#container{
+#container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 // form{
-//     // width:50%
+//     width:100%
 // }
 
 
-#placeVisitedRecord{
+#placeVisitedRecord {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    border:#5271ff;
+    border: #5271ff;
     border-style: solid;
     padding: 0.75rem 0.75rem 0.75rem 0.75rem;
     border-radius: 0.5rem;
-    height:4rem;
+    height: 4rem;
     align-items: baseline;
 }
 
-select, input{
+select,
+input {
     background: transparent;
-    color:white;
+    color: white;
     font-family: "Teko", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
@@ -32,53 +33,89 @@ select, input{
     font-size: medium;
     border-radius: 0.3rem;
     margin-right: 0.75rem;
-    width:19rem;
-    height:3rem;
+    width: 19rem;
+    height: 3rem;
 }
 
 
 @media (max-width: 475px) {
-  p{
-    font-size: 0.75rem;
-  }
+    p {
+        font-size: 0.75rem;
+    }
 }
 
-@media (max-width: 1536px) {
-    
-}
+@media (max-width: 1536px) {}
 
 /* xl */
 @media (max-width: 1280px) {
-    select, input{
-    width:18rem;
-}
+
+    select,
+    input {
+        width: 18rem;
+    }
 }
 
 /* lg */
 @media (max-width: 1024px) {
-    select, input{
-    width:12rem;
-}
+
+    select,
+    input {
+        width: 12rem;
+    }
 
 }
 
 /* md */
 @media (max-width: 768px) {
-    select, input{
-    width:6rem;
+
+    select
+    {
+        width: 6rem;
+        // flex-grow:1;
+    }
+
+    input {
+        width: 6rem;
+    }
+
+    // #inputContainer{
+    //     flex-grow:1;
+    // }
+
+    form {
+        width: 90%;
+    }
 }
 
 @media (max-width: 480px) {
-    input{
-    width:5rem;
-}
+    input {
+        width: 5rem;
+    }
 
-    select{
-    width:5.5rem;
-}
+    select {
+        width: 9.5rem;
+    }
 
-    #formButtons{
+    #formButtons {
         text-align: center;
     }
-}
+
+    #formButtons button{
+        font-size:small;
+        width:10rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input, select{
+        margin-right:0;
+        font-size:small;
+    }
+
+    #placeVisitedRecord{
+        height:inherit;
+    }
+
 }
