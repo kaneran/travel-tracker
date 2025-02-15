@@ -1,77 +1,88 @@
-#mainContainer > *{
-    outline-style: solid;
+#mainContainer>* {
+  outline-style: solid;
 }
 
-#mainContainer{
-    display: flex;
-    flex-direction: column;
-    // padding-left:4rem;
-    // padding-right:4rem;
-    // padding-top: 2rem;
-    // min-height: 80vh;
-    // max-width: 90%;
-    max-width: 1536px;
+#mainContainer {
+  display: flex;
+  flex-direction: column;
+  // padding-left:4rem;
+  // padding-right:4rem;
+  // padding-top: 2rem;
+  // min-height: 80vh;
+  // max-width: 90%;
+  max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-#goalsSection{
-    outline-color: aqua;
-    color:orange;
-    flex-grow: 1.5;
+#goalsSection {
+  outline-color: aqua;
+  color: orange;
+  flex-grow: 1.5;
 }
 
-#placesVisitedSection{
-    outline-color: green;
-    color:red;
-    flex-grow: 4;
+#placesVisitedSection {
+  outline-color: green;
+  color: red;
+  flex-grow: 4;
 }
 
-#profileSection{
-    display: flex;
-    gap: 0.75rem;
+#profileSection {
+  display: flex;
+  gap: 0.75rem;
 }
 
-#profilePic{
-    height:11rem;
-    width:11rem;
+#profilePic {
+  height: 11rem;
+  width: 11rem;
 }
 
-#statsSection{
-    flex-grow: 4;
+#statsSection {
+  flex-grow: 4;
 }
 
-#profileName{
-    // margin:auto
+#profileName {
+  // margin:auto
 }
 
-#statsHeaderSection{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+#statsHeaderSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-#placesVisitedSection{
-  display:flex;
+#placesVisitedSection {
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#dateVisited{
+#dateVisited {
   align-self: flex-end;
 }
 
-#placesVisited{
-  width:70%;
-  display:flex;
+#placesVisited {
+  width: 50%;
+  display: flex;
   flex-direction: column;
 }
 
-#placeVisited{
-  display:flex;
+#placeVisited {
+  display: flex;
   justify-content: space-between;
+}
+
+#placeContainer {
+  display: flex;
+}
+
+#progressBars {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 50%;
 }
 
 /* 2xl */
@@ -108,12 +119,26 @@
   .container {
     max-width: 475px;
   }
+
+  #profilePic {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
 }
 
 /* xs */
 @media (max-width: 475px) {
   .container {
     width: 100%;
+  }
+
+  #placesVisited {
+    width: 90%;
+  }
+
+  #profilePic {
+    height: 5rem;
+    width: 5rem;
   }
 
 }

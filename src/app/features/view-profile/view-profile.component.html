@@ -8,11 +8,9 @@
                 <button class="button" (click)="editProfile()">EDIT PROFILE</button>
                 </div>
                 <p>{{userStats?.role}}</p>
-                <div id="goalsSection">
-                    <div>
-                        <app-progress-bar [score]="70" [title]="countriesGoalTitle"></app-progress-bar>
-                        <app-progress-bar [score]="45" [title]="placesGoalTitle"></app-progress-bar>
-                    </div>
+                <div id="progressBars">
+                    <app-progress-bar [score]="70" [title]="countriesGoalTitle"></app-progress-bar>
+                    <app-progress-bar [score]="45" [title]="placesGoalTitle"></app-progress-bar>
                 </div>
             </div>
         </div>
@@ -22,8 +20,10 @@
         <div id="placesVisited">
             @for(item of userStats?.countries_visited; track item){
                 <div id="placeVisited">
-                <img src="../../assets/flags/{{item.alpha2}}.svg" class="flag"/>
-                <p>{{item.country_name}}</p>
+                    <div id="placeContainer">
+                        <img src="../../assets/flags/{{item.alpha2}}.svg" class="flag"/>
+                        <p>{{item.place_visited}}</p>
+                    </div>
                 <p>{{item.date_visited}}</p>
             </div>
             }
