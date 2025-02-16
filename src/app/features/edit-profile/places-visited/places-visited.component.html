@@ -13,7 +13,7 @@
           }
           </div>
           <div id="inputContainer">
-          <input type="text" formControlName="date_visited" placeholder="DD/MM/YYYY" required [class]="!validateInput(placeVisited, 'date_visited') ? 'error': ''">
+          <input type="text" formControlName="date_visited" placeholder="YYYY-MM-DD" required [class]="!validateInput(placeVisited, 'date_visited') ? 'error': ''">
           @if(!validateInput(placeVisited, 'date_visited')){
             <p id="validationMessage">Please enter valid date</p>
           }

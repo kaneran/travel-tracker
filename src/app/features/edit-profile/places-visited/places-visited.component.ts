@@ -40,7 +40,7 @@ export class PlacesVisitedComponent implements OnInit {
     userStats.countries_visited.forEach(country_visited => {
       placesVisited.push(this.formBuilder.group({
         action: "",
-        date_visited: this.formBuilder.control(country_visited.date_visited, [Validators.required, Validators.pattern("[0-3][0-9]\/[0-1][0-9]\/[0-9][0-9][0-9][0-9]")]),
+        date_visited: this.formBuilder.control(country_visited.date_visited, [Validators.required, Validators.pattern("[0-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]")]),
         country_visited: this.formBuilder.control(country_visited.country_name, Validators.required),
         place_visited: this.formBuilder.control(country_visited.place_visited, Validators.required)
       }));
@@ -54,7 +54,7 @@ export class PlacesVisitedComponent implements OnInit {
   get formGroup(): FormGroup {
     return this.formBuilder.group({
       action: "",
-      date_visited: this.formBuilder.control('', [Validators.required, Validators.pattern("[0-3][0-9]\/[0-1][0-9]\/[0-9][0-9][0-9][0-9]")]),
+      date_visited: this.formBuilder.control('', [Validators.required, Validators.pattern("[0-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]")]),
       country_visited: this.formBuilder.control('', Validators.required),
       place_visited: this.formBuilder.control('', Validators.required)
     });
@@ -74,7 +74,7 @@ export class PlacesVisitedComponent implements OnInit {
       console.log(this.deletedRecord);
       this.placesVisited.push(this.formBuilder.group({
         action: "",
-        date_visited: this.formBuilder.control(this.deletedRecord.value.date_visited, [Validators.required, Validators.pattern("[0-3][0-9]\/[0-1][0-9]\/[0-9][0-9][0-9][0-9]")]),
+        date_visited: this.formBuilder.control(this.deletedRecord.value.date_visited, [Validators.required, Validators.pattern("[0-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]")]),
         country_visited: this.formBuilder.control(this.deletedRecord.value.country_visited, Validators.required),
         place_visited: this.formBuilder.control(this.deletedRecord.value.place_visited, Validators.required)
       }))
@@ -114,6 +114,8 @@ export class PlacesVisitedComponent implements OnInit {
 
     const updatedUserStats = await this.travelService.updateUserStats(response) as UserStatDetails;
     if (updatedUserStats !== undefined) {
+      let toast = { type: ToastType.SUCCESS, message: 'Successfully saved.' } as Toast;
+      this.toastService.addToast(toast);
       this.placesVisited.clear();
       this.updatePlacesVisitedForm(updatedUserStats);
     }

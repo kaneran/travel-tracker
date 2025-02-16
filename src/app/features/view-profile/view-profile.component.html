@@ -24,7 +24,7 @@
                         <img src="../../assets/flags/{{item.alpha2}}.svg" class="flag"/>
                         <p>{{item.place_visited}}</p>
                     </div>
-                <p>{{item.date_visited}}</p>
+                <p>{{item.date_visited | date : "mediumDate"}}</p>
             </div>
             }
             
