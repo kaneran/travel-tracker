@@ -85,6 +85,16 @@
   width: 50%;
 }
 
+#editProfileButton{
+  background-color: #5271ff;
+  color:white;
+  font-weight: bold;
+}
+
+#editProfileButton:hover{
+  background-color: #5909e4;
+}
+
 /* 2xl */
 @media (max-width: 1536px) {
   .container {
