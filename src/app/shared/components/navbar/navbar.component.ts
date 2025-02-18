@@ -15,11 +15,11 @@ export class NavbarComponent {
   auth: Auth = inject(Auth);
   router: Router = inject(Router);
   authenticationService: AuthenticationService = inject(AuthenticationService);
-  isLoggedIn: boolean = false;
 
   async Login() {
-    if (await this.authenticationService.signInWithGoogle() !== undefined) {
-      this.isLoggedIn = true;
+    if (this.auth.currentUser !== null) {
+      this.router.navigate(['/profile']);
+    } else if (await this.authenticationService.signInWithGoogle() !== undefined) {
       this.router.navigate(['/profile']);
     }
   }
@@ -27,7 +27,6 @@ export class NavbarComponent {
   async Logout() {
     await this.authenticationService.firebaseSignOut();
     this.router.navigate(['/home']);
-    this.isLoggedIn = false;
   }
 
 }

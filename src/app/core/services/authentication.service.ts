@@ -15,13 +15,6 @@ export class AuthenticationService {
   travelDataService: TravelDataService = inject(TravelDataService);
   toastService: ToastService = inject(ToastService);
 
-  constructor() {
-  }
-
-  async test() {
-    console.log("Test");
-  }
-
   async signInWithGoogle() {
     const credential = signInWithPopup(this.auth, new GoogleAuthProvider());
     //const credential = await signInWithRedirect(auth, new GoogleAuthProvider());
