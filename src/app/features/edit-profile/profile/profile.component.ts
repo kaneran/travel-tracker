@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Inject, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AbstractControl, Form, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Country, CountryVisited, Goal, TravelDataService, UserStat, UserStatDetails } from '../../../core/services/travel-data.service';
+import { Toast, ToastService, ToastType } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,6 +18,7 @@ export class ProfileComponent {
   userStats: UserStatDetails;
   countries: Country[];
   travelService: TravelDataService = inject(TravelDataService);
+  toastService: ToastService = inject(ToastService);
 
   ngOnInit(): void {
     this.travelService.getCountries().then((countries) => {
@@ -32,14 +34,19 @@ export class ProfileComponent {
   }
 
   private updateProfileForm(userStats: UserStatDetails) {
-    userStats.goals.forEach(goal => {
-      this.goals.push(this.formBuilder.group({
-        action: "",
-        quantity: this.formBuilder.control(goal.quantity, [Validators.required, Validators.min(1)]),
-        countryOrPlace: this.formBuilder.control(goal.countryOrPlace, Validators.required),
-        age: this.formBuilder.control(goal.age, [Validators.required, Validators.min(16)])
-      }));
-    });
+    this.goals.push(this.formBuilder.group({
+      action: "",
+      quantity: this.formBuilder.control(userStats.countries_goal.quantity, [Validators.required, Validators.min(1)]),
+      countryOrPlace: this.formBuilder.control("countries", Validators.required),
+      age: this.formBuilder.control(userStats.countries_goal.age, [Validators.required, Validators.min(16)])
+    }))
+
+    this.goals.push(this.formBuilder.group({
+      action: "",
+      quantity: this.formBuilder.control(userStats.places_goal.quantity, [Validators.required, Validators.min(1)]),
+      countryOrPlace: this.formBuilder.control("places", Validators.required),
+      age: this.formBuilder.control(userStats.places_goal.age, [Validators.required, Validators.min(16)])
+    }))
   }
 
   get goals(): FormArray {
@@ -53,15 +60,6 @@ export class ProfileComponent {
       countryOrPlace: this.formBuilder.control('', Validators.required),
       age: this.formBuilder.control('', [Validators.required, Validators.min(16)])
     });
-  }
-
-  addRecord() {
-    this.goals.push(this.formGroup)
-  }
-
-  deleteRecord(index: number) {
-    this.deletedRecord = this.goals.at(index);
-    this.goals.removeAt(index);
   }
 
   undoPreviousChange() {
@@ -85,15 +83,26 @@ export class ProfileComponent {
   async saveChanges() {
     let response = {} as UserStat;
     response.role = this.userStats.role;
+    response.countries_goal = {} as Goal;
+    response.places_goal = {} as Goal;
     response.total_no_countries_visited = this.userStats.total_no_countries_visited;
     response.total_no_places_visited = this.userStats.total_no_places_visited;
     response.countries_visited = this.userStats.countries_visited.map(cv => ({ country_name: cv.country_name, date_visited: cv.date_visited, place_visited: cv.place_visited, positive_note: cv.positive_note, region: this.region(cv.country_name) }) as CountryVisited) as CountryVisited[];
-    let goals = [...this.profileForm.value.goals] as Goal[];
-    goals = goals.map(goal => ({ age: goal.age, countryOrPlace: goal.countryOrPlace, quantity: goal.quantity }) as Goal);
-    response.goals = goals;
+
+    let goals = [...this.profileForm.value.goals];
+    goals.forEach(goal => {
+      let formGoal = { quantity: goal.quantity, age: goal.age } as Goal;
+      if (goal.countryOrPlace == "countries") {
+        response.countries_goal = formGoal;
+      } else if (goal.countryOrPlace == "places") {
+        response.places_goal = formGoal;
+      }
+    });
 
     const updatedUserStats = await this.travelService.updateUserStats(response) as UserStatDetails;
     if (updatedUserStats !== undefined) {
+      let toast = { type: ToastType.SUCCESS, message: 'Successfully saved.' } as Toast;
+      this.toastService.addToast(toast);
       this.goals.clear();
       this.updateProfileForm(updatedUserStats);
     }

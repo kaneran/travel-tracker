@@ -31,7 +31,8 @@ export class TravelDataService {
       const countriesVisited: CountryVisitedDetail[] = await this.getCountriesVisited(response);
       const userStatDetails: UserStatDetails = {
         total_no_countries_visited: response.total_no_countries_visited,
-        total_no_places_visited: response.total_no_places_visited, countries_visited: countriesVisited, goals: response.goals, role: response.role
+        total_no_places_visited: response.total_no_places_visited, countries_visited: countriesVisited, role: response.role,
+        countries_goal: response.countries_goal, places_goal: response.places_goal
       }
 
       this.userStatsResponse = userStatDetails;
@@ -118,7 +119,8 @@ export interface UserStat {
   total_no_countries_visited: number,
   total_no_places_visited: number,
   countries_visited: CountryVisited[],
-  goals: Goal[],
+  places_goal: Goal,
+  countries_goal: Goal,
   role: string
 }
 
@@ -142,15 +144,14 @@ export interface UserStatDetails {
   total_no_countries_visited: number,
   total_no_places_visited: number,
   countries_visited: CountryVisitedDetail[],
-  goals: Goal[],
+  countries_goal: Goal,
+  places_goal: Goal,
   role: string
 }
 
-
 export interface Goal {
   quantity: number,
-  age: number,
-  countryOrPlace: string
+  age: number
 }
 
 export interface Country {

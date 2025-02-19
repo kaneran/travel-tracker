@@ -86,7 +86,8 @@ export class PlacesVisitedComponent implements OnInit {
     console.log(this.placesVisitedForm.value);
     let response = {} as UserStat;
     response.role = this.userStats.role;
-    response.goals = this.userStats.goals;
+    response.countries_goal = this.userStats.countries_goal;
+    response.places_goal = this.userStats.places_goal;
     response.total_no_countries_visited = this.userStats.total_no_countries_visited;
     response.total_no_places_visited = this.userStats.total_no_places_visited;
     let placesVisited = [...this.placesVisitedForm.value.placesVisited] as PlaceVisited[];
