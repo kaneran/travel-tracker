@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-progress-bar',
@@ -8,7 +8,14 @@ import { Component, Input } from '@angular/core';
   templateUrl: './progress-bar.component.html',
   styleUrl: './progress-bar.component.scss'
 })
-export class ProgressBarComponent {
-  @Input() score: number;
+export class ProgressBarComponent implements OnInit {
+  @Input() visited: number;
+  @Input() goal: number;
   @Input() title: string;
+
+  progress: number;
+
+  ngOnInit(): void {
+    this.progress = this.visited / this.goal * 100;
+  }
 }

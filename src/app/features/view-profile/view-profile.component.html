@@ -9,8 +9,12 @@
                 </div>
                 <p>{{userStats?.role}}</p>
                 <div id="progressBars">
-                    <app-progress-bar [score]="70" [title]="countriesGoalTitle"></app-progress-bar>
-                    <app-progress-bar [score]="45" [title]="placesGoalTitle"></app-progress-bar>
+                    @if(userStats !== undefined && userStats.countries_goal.quantity !== undefined){
+                        <app-progress-bar [visited]="userStats.total_no_countries_visited" [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>
+                    }
+                    @if(userStats !== undefined && userStats.places_goal.quantity !== undefined){
+                        <app-progress-bar [visited]="userStats.total_no_places_visited" [goal]="userStats.places_goal.quantity" [title]="placesGoalTitle"></app-progress-bar>
+                    }
                 </div>
             </div>
         </div>
