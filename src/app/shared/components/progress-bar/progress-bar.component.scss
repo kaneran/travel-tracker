@@ -13,17 +13,26 @@
     border-radius: 1rem;
     margin-left:1rem;
     align-items: center;
+    position:relative;
 }
 
 #progressMade{
     height: inherit;
-    background-color: rgb(23, 243, 3);
+    background-color: #ffde59;
     border-radius: inherit;
 }
 
 #progressBar{
     display: flex;
     align-items: center;
+}
+
+#progressText{
+    position: absolute;
+    text-align: center;
+    width: inherit;
+    font-weight: bold;
+    text-shadow: 1px 1px 15px #ffde59;
 }
 
 // @media (max-width: 1536px) {
