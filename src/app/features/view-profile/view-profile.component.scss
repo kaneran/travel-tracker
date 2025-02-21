@@ -44,7 +44,7 @@
 }
 
 #profileName {
-  // margin:auto
+  margin-bottom:0
 }
 
 #statsHeaderSection {
@@ -83,12 +83,23 @@
   flex-direction: column;
   align-items: end;
   width: 50%;
+  flex-wrap: wrap;
 }
 
 #editProfileButton{
   background-color: #5271ff;
   color:white;
   font-weight: bold;
+}
+
+#userRole{
+  width: fit-content;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.creator{
+  background-color: #8c52ff;
 }
 
 #editProfileButton:hover{
@@ -108,12 +119,20 @@
   .container {
     max-width: 1024px;
   }
+
+  #progressBars{
+    width:70%;
+  }
 }
 
 /* lg */
 @media (max-width: 1024px) {
   .container {
     max-width: 768px;
+  }
+
+  #progressBars{
+    width:90%;
   }
 }
 
@@ -122,6 +141,10 @@
   .container {
     max-width: 640px;
   }
+
+  // #progressBars{
+  //   width:98%;
+  // }
 }
 
 /* sm */
