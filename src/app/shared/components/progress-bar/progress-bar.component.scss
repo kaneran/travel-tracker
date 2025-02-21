@@ -48,14 +48,17 @@
 //     }
 // }
 
-// /* lg */
-// @media (max-width: 1024px) {
-// }
+/* lg */
+@media (max-width: 1024px) {
+    #progressWrapper{
+        width:22rem;
+    }
+}
 
 /* md */
 @media (max-width: 768px) {
     #progressWrapper{
-        width:60%;
+        width:18rem;
     }
 }
 
