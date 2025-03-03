@@ -51,27 +51,31 @@
 /* lg */
 @media (max-width: 1024px) {
     #progressWrapper{
-        width:22rem;
+        width:30rem;
+    }
+
+    #progressBar{
+        flex-direction: column;
     }
 }
 
 /* md */
 @media (max-width: 768px) {
     #progressWrapper{
-        width:18rem;
+        // width:18rem;
     }
 }
 
 /* sm */
-// @media (max-width: 640px) {
-//     #progressWrapper{
-//         width:10rem;
-//     }
-// }
+ @media (max-width: 640px) {
+     #progressWrapper{
+         width:20rem;
+     }
+ }
 
 // /* xs */
-// @media (max-width: 475px) {
-//     #progressWrapper{
-//         width:100px;
-//     }
-// }
+ @media (max-width: 475px) {
+     #progressWrapper{
+         width:15rem;
+     }
+ }

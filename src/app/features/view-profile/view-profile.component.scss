@@ -132,7 +132,12 @@
   }
 
   #progressBars{
-    width:90%;
+    width:inherit;
+    align-items: center;
+  }
+
+  #profileSection{
+    flex-direction: column;
   }
 }
 
