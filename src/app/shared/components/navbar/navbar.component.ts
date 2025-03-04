@@ -15,6 +15,7 @@ export class NavbarComponent {
   auth: Auth = inject(Auth);
   router: Router = inject(Router);
   authenticationService: AuthenticationService = inject(AuthenticationService);
+  doShowDropdown: boolean = false;
 
   async Login() {
     if (this.auth.currentUser !== null) {
@@ -27,6 +28,10 @@ export class NavbarComponent {
   async Logout() {
     await this.authenticationService.firebaseSignOut();
     this.router.navigate(['/home']);
+  }
+
+  updateDropdownToggle() {
+    this.doShowDropdown = !this.doShowDropdown;
   }
 
 }

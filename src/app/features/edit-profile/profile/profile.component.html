@@ -9,13 +9,13 @@
            <div [formGroupName]="i" id="goalContainer">
             <p class="goalText">{{i + 1}}.</p>
             <p class="goalText">I want to visit</p>
-            <input type=text formControlName="quantity" placeholder="30"/>
+            <input type=text formControlName="quantity" placeholder="30" [class]="!validateInput(goal, 'quantity') ? 'error': ''"/>
             <select formControlName="countryOrPlace" placeholder="Select type">
                 <option>places</option>
                 <option>countries</option>
             </select>
             <p class="goalText">by age</p>
-            <input type=text formControlName="age" placeholder="30"/>
+            <input type=text formControlName="age" placeholder="30" [class]="!validateInput(goal, 'age') ? 'error': ''"/>
            </div>
         </div>
     </form>
