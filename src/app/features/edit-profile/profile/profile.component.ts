@@ -107,4 +107,8 @@ export class ProfileComponent {
       this.updateProfileForm(updatedUserStats);
     }
   }
+
+  validateInput(goal: any, field: string): boolean {
+    return goal.controls[field].status === "VALID";
+  }
 }

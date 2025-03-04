@@ -37,6 +37,7 @@
 #profilePic {
   height: 11rem;
   width: 11rem;
+  border-radius: 100%;
 }
 
 #statsSection {
@@ -100,6 +101,10 @@
 
 .creator{
   background-color: #8c52ff;
+}
+
+.explorer{
+  background-color: #f4af27;
 }
 
 #editProfileButton:hover{

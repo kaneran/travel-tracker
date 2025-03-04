@@ -7,7 +7,7 @@
                 <h1 id="profileName">{{auth.currentUser?.displayName}}</h1>
                 <button id="editProfileButton" class="button" (click)="editProfile()">Edit Profile</button>
                 </div>
-                <p id="userRole" class="creator">{{userStats?.role}}</p>
+                <p id="userRole" [class]="userStats?.role == 'CREATOR' ? 'creator' : 'explorer' ">{{userStats?.role}}</p>
                 <div id="progressBars">
                     @if(userStats !== undefined && userStats.countries_goal.quantity !== undefined){
                         <app-progress-bar [visited]="userStats.total_no_countries_visited" [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>

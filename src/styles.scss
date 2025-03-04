@@ -1,163 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: "Teko", sans-serif;
-    src: url(assets/fonts/Teko-Light.ttf);
+  font-family: "Teko", sans-serif;
+  src: url(assets/fonts/Teko-Light.ttf);
 }
 
 body {
-    background-color: #070d29;
-
+  background-color: #070d29;
 }
 
 .delete {
-    width: 2rem;
-    height: 2rem;
-    background: #ff3131;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-family: "Teko", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
+  width: 2rem;
+  height: 2rem;
+  background: #ff3131;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
 }
 
 .delete:hover {
-    background: #e64040;
+  background: #e64040;
 }
 
 input.error {
-    border-color: #e64040;
+  border-color: #e64040;
 }
 
 .button {
-    // font-family: Arial, Helvetica, sans-serif;
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-style: none;
+  // font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-style: none;
 }
 
 .button-success {
-    background-color: #00bf63;
-    color: #f3f4f4;
+  background-color: #00bf63;
+  color: #f3f4f4;
 }
 
 .button-save {
-    background-color: #5271ff;
-    color: #f3f4f4;
+  background-color: #5271ff;
+  color: #f3f4f4;
 }
 
 .button-save.disabled {
-    background-color: #9199bb;
-    color: #f3f4f4;
-    cursor: not-allowed;
+  background-color: #9199bb;
+  color: #f3f4f4;
+  cursor: not-allowed;
 }
 
 #formButtons button {
-    margin: 0.5rem;
-    width: 11rem;
-    height: 3rem;
+  margin: 0.5rem;
+  width: 11rem;
+  height: 3rem;
 }
 
 .header {
-    font-size: 5rem;
-    margin: unset
+  font-size: 5rem;
+  margin: unset;
 }
 
 .body {
-    font-size: 1.5rem;
-    margin: unset;
+  font-size: 1.5rem;
+  margin: unset;
 }
 
 .bar {
-    background-color: #f3f4f4;
-    height: 0.2rem;
-    width: 80%;
-    margin-left: 0.5rem;
+  background-color: #f3f4f4;
+  height: 0.2rem;
+  width: 80%;
+  margin-left: 0.5rem;
 }
 
 h1,
 p,
 button,
-h2 {
-    font-family: "Teko", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
+h2,
+a {
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 h1,
 p,
-h2 {
-    color: #f3f4f4;
+h2,
+a {
+  color: #f3f4f4;
 }
 
-
 @media (max-width: 1536px) {
-    .header {
-        font-size: 4rem;
-    }
+  .header {
+    font-size: 4rem;
+  }
 
-    .body {
-        font-size: 1.25rem;
-    }
+  .body {
+    font-size: 1.25rem;
+  }
 }
 
 /* xl */
 @media (max-width: 1280px) {
-    .header {
-        font-size: 3rem;
-    }
+  .header {
+    font-size: 3rem;
+  }
 }
 
 /* lg */
 @media (max-width: 1024px) {
-    .header {
-        font-size: 2rem;
-    }
+  .header {
+    font-size: 2rem;
+  }
 }
 
 /* md */
 @media (max-width: 768px) {
-    #progressWrapper {
-        width: 300px;
-    }
+  #progressWrapper {
+    width: 300px;
+  }
 
-    .body {
-        font-size: 1rem;
-    }
+  .body {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 475px) {
-    .button {
-        font-size: 1rem;
-    }
+  .button {
+    font-size: 1rem;
+  }
 
-    h1, h2 {
-        font-size: 1.25rem;
-    }
+  h1,
+  h2 {
+    font-size: 1.25rem;
+  }
 
-    p {
-        font-size: 0.75rem;
-    }
+  p {
+    font-size: 0.75rem;
+  }
 }
 
 .flag {
-    width: 3rem;
-    margin-right: 1rem;
+  width: 3rem;
+  margin-right: 1rem;
 }
 
 #inputContainer {
-    height: inherit
+  height: inherit;
 }
 
 #validationMessage {
-    margin: 0.3rem 0 0 0;
-    color: #e64040;
+  margin: 0.3rem 0 0 0;
+  color: #e64040;
 }
 
-
 select option {
-    background: #070d29;
+  background: #070d29;
 }

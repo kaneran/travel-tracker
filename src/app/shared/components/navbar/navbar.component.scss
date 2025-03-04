@@ -1,19 +1,63 @@
-#container{
-    display: flex;
-    flex-direction: row-reverse;
-    margin-left:auto;
-    margin-right:auto;
-    max-width:1536px;
-    padding-left:.75rem;
-    padding-right:.75rem;
-    padding-top: 2rem;
+#container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 2rem;
+  background-color: #022168;
 }
 
-button{
-    font-weight: bold;
+button {
+  font-weight: bold;
 }
 
-button:hover{
-    background-color: blueviolet;
-    color:white;
+button:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
+@keyframes showDropdown {
+  from {
+    background-color: #022168;
+  }
+  to {
+    background-color: red;
+  }
+}
+
+#profilePic:hover #dropdownContent,
+.showContent {
+  display: flex;
+  animation: 4s showDropdown;
+}
+
+.hideContent {
+  display: none;
+}
+
+#profilePic {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+#profilePic img {
+  border-radius: 100%;
+  width: 4rem;
+  height: 4rem;
+}
+
+#dropdownContent {
+  background-color: black;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+#dropdownContent a {
+  font-weight: normal;
 }
