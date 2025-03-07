@@ -1,16 +1,14 @@
-  
-  <nav id="container">
+<nav id="container">
   @if(auth.currentUser){
-    <!-- <button (click)="Logout()" class="button">Logout</button> -->
-     <div id="profilePic" (click)="updateDropdownToggle()">
-      <img src={{auth.currentUser?.photoURL}}>
-      <div id="dropdownContent" [class]="doShowDropdown ? 'showContent' : 'hideContent'">
-        <a class="button">Profile</a>
-        <a (click)="Logout()">Logout</a>
-      </div>
-     </div>
-     
+  <div class="dropdown">
+    <img id="profilePic" src={{auth.currentUser?.photoURL}} (click)="updateDropdownToggle()">
+    <div class="dropdown-content" [class]="doShowDropdown ? 'showContent' : 'hideContent'">
+      <a href="#">Profile</a>
+      <a href="#" (click)="Logout()">Logout</a>
+    </div>
+  </div>
+
   } @else{
-    <button (click)="Login()" class="button">Login</button>
+  <button (click)="Login()" class="button">Login</button>
   }
 </nav>
