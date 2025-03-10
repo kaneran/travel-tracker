@@ -21,6 +21,7 @@
     </div>
     <div id="placesVisitedSection">
         <h1>Places Visited</h1>
+        @if(userStats !== undefined && userStats.countries_visited.length > 0){
         <div id="placesVisited">
             @for(item of userStats?.countries_visited; track item){
                 <div id="placeVisited">
@@ -33,6 +34,10 @@
             }
             
         </div>
+    } @else{
+        <p>Looks like you haven't added any places yet! Click the 'Edit Profile' button to begin</p>
+    }
+        
     </div>
 </div>
 
