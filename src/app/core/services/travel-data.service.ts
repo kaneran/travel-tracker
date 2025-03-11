@@ -121,7 +121,10 @@ export interface UserStat {
   countries_visited: CountryVisited[],
   places_goal: Goal,
   countries_goal: Goal,
-  role: string
+  role: string,
+  best_year_streak: number,
+  countries_goal_estimate: string,
+  places_goal_estimate: string
 }
 
 export interface CountryVisited {

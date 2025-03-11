@@ -24,7 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
 })
 export class EditProfileComponent {
   buttonStates: ButtonState[] = [];
-  tabs: IPageTab[] = [{ name: 'Places Visited', component: '<app-test1/>' }, { name: 'Profile', component: '<app-test2/>' }]
+  tabs: IPageTab[] = [{ name: 'Places Visited', component: '<app-test1/>' }, { name: 'Edit Profile', component: '<app-test2/>' }]
   tabSelected: string;
 
 
