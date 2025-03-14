@@ -32,7 +32,8 @@ export class TravelDataService {
       const userStatDetails: UserStatDetails = {
         total_no_countries_visited: response.total_no_countries_visited,
         total_no_places_visited: response.total_no_places_visited, countries_visited: countriesVisited, role: response.role,
-        countries_goal: response.countries_goal, places_goal: response.places_goal
+        countries_goal: response.countries_goal, places_goal: response.places_goal, places_goal_estimate: response.places_goal_estimate,
+        countries_goal_estimate: response.countries_goal_estimate, best_year_streak: response.best_year_streak
       }
 
       this.userStatsResponse = userStatDetails;
@@ -149,7 +150,10 @@ export interface UserStatDetails {
   countries_visited: CountryVisitedDetail[],
   countries_goal: Goal,
   places_goal: Goal,
-  role: string
+  role: string,
+  best_year_streak: number,
+  countries_goal_estimate: string,
+  places_goal_estimate: string
 }
 
 export interface Goal {

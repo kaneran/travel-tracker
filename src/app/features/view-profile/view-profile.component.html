@@ -16,6 +16,20 @@
                         <app-progress-bar [visited]="userStats.total_no_places_visited" [goal]="userStats.places_goal.quantity" [title]="placesGoalTitle"></app-progress-bar>
                     }
                 </div>
+                <div id="calculatedStats">
+                    <div>
+                        <p class="statHeader">Estimated age to hit Countries Goal</p>
+                        <p class="statBody">{{userStats.countries_goal_estimate}}</p>
+                    </div>
+                    <div>
+                        <p class="statHeader">Estimated age to hit Places Goal</p>
+                        <p class="statBody">{{userStats.places_goal_estimate}}</p>
+                    </div>
+                    <div>
+                        <p class="statHeader">Best Year Streak (Places)</p>
+                        <p class="statBody">{{userStats.best_year_streak}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
