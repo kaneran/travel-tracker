@@ -51,7 +51,7 @@
 /* lg */
 @media (max-width: 1024px) {
     #progressWrapper{
-        width:30rem;
+        width:26.5rem;
     }
 
     #progressBar{
@@ -62,15 +62,15 @@
 /* md */
 @media (max-width: 768px) {
     #progressWrapper{
-        // width:18rem;
+        // width:18.75rem;
     }
 }
 
 /* sm */
  @media (max-width: 640px) {
-     #progressWrapper{
-         width:20rem;
-     }
+    //  #progressWrapper{
+    //      width:20rem;
+    //  }
  }
 
 // /* xs */
