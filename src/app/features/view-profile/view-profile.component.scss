@@ -39,7 +39,7 @@
   height: 11rem;
   width: 11rem;
   border-radius: 100%;
-  margin-right:0.5rem;
+  margin-right: 0.5rem;
 }
 
 #statsSection {
@@ -75,6 +75,7 @@
 #placeVisited {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.75rem;
 }
 
 #placeContainer {
@@ -116,22 +117,23 @@
 #calculatedStats {
   display: flex;
   justify-content: space-between;
+  padding: 2rem 20rem 0 20rem;
 }
 
 #calculatedStats div {
   text-align: center;
 }
 
-#profileBadgeSection{
+#profileBadgeSection {
   display: flex;
   align-items: center;
 }
 
-#badgeContainer{
+#badgeContainer {
   margin-right: 2rem;
 }
 
-#editSection{
+#editSection {
   // width: 100%;
   display: flex;
   justify-content: end;
@@ -139,10 +141,18 @@
 
 }
 
+#placesVisited>p {
+  text-align: end;
+}
+
 /* 2xl */
 @media (max-width: 1536px) {
   .container {
     max-width: 1280px;
+  }
+
+  #calculatedStats {
+    padding: 2rem 10rem 0 10rem;
   }
 
 }
@@ -155,6 +165,10 @@
 
   #progressBars {
     width: 70%;
+  }
+
+  #calculatedStats {
+    padding: 2rem 3rem 0 3rem;
   }
 }
 
@@ -184,8 +198,8 @@
   //   width:98%;
   // }
 
-  #profileBadgeSection{
-    flex-wrap:wrap;
+  #profileBadgeSection {
+    flex-wrap: wrap;
     justify-content: center;
   }
 }
@@ -200,6 +214,13 @@
   //   height: 7rem;
   //   width: 7rem;
   // }
+  #calculatedStats {
+    padding: 2rem 0.5rem 0 0.5rem;
+  }
+
+  .statHeader {
+    font-size: 0.9rem;
+  }
 
 }
 
@@ -216,6 +237,10 @@
   #profilePic {
     height: 5rem;
     width: 5rem;
+  }
+
+  #calculatedStats {
+    padding: 2rem 0 0 0;
   }
 
 }

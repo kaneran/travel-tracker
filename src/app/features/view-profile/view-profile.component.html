@@ -10,38 +10,36 @@
                     </p>
                 </div>
                 <div id="progressBars">
-                @if(userStats !== undefined && userStats.countries_goal.quantity !== undefined){
-                <app-progress-bar [visited]="userStats.total_no_countries_visited"
-                    [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>
-                }
-                @if(userStats !== undefined && userStats.places_goal.quantity !== undefined){
-                <app-progress-bar [visited]="userStats.total_no_places_visited" [goal]="userStats.places_goal.quantity"
-                    [title]="placesGoalTitle"></app-progress-bar>
-                }
-            </div>
+                    @if(userStats !== undefined && userStats.countries_goal.quantity !== undefined){
+                    <app-progress-bar [visited]="userStats.total_no_countries_visited"
+                        [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>
+                    }
+                    @if(userStats !== undefined && userStats.places_goal.quantity !== undefined){
+                    <app-progress-bar [visited]="userStats.total_no_places_visited"
+                        [goal]="userStats.places_goal.quantity" [title]="placesGoalTitle"></app-progress-bar>
+                    }
+                </div>
             </div>
 
-            
+
             <div id="editSection">
                 <button id="editProfileButton" class="button" (click)="editProfile()">Edit Profile</button>
             </div>
-            
+
 
         </div>
-        <div id="statsSection">
-            <div id="calculatedStats">
-                <div>
-                    <p class="statHeader">Estimated age to hit Countries Goal</p>
-                    <p class="statBody">{{userStats.countries_goal_estimate}}</p>
-                </div>
-                <div>
-                    <p class="statHeader">Estimated age to hit Places Goal</p>
-                    <p class="statBody">{{userStats.places_goal_estimate}}</p>
-                </div>
-                <div>
-                    <p class="statHeader">Best Year Streak (Places)</p>
-                    <p class="statBody">{{userStats.best_year_streak}}</p>
-                </div>
+        <div id="calculatedStats">
+            <div>
+                <p class="statHeader">Estimated age to hit Countries Goal</p>
+                <p class="statBody">{{userStats.countries_goal_estimate}}</p>
+            </div>
+            <div>
+                <p class="statHeader">Estimated age to hit Places Goal</p>
+                <p class="statBody">{{userStats.places_goal_estimate}}</p>
+            </div>
+            <div>
+                <p class="statHeader">Best Year Streak (Places)</p>
+                <p class="statBody">{{userStats.best_year_streak}}</p>
             </div>
         </div>
     </div>
@@ -49,6 +47,7 @@
         <h1>Places Visited</h1>
         @if(userStats !== undefined && userStats.countries_visited.length > 0){
         <div id="placesVisited">
+            <p class="statHeader">Date visited</p>
             @for(item of userStats?.countries_visited; track item){
             <div id="placeVisited">
                 <div id="placeContainer">
