@@ -48,8 +48,8 @@
         @if(userStats !== undefined && userStats.countries_visited.length > 0){
         <div id="placesVisited">
             <p class="statHeader">Date visited</p>
-            @for(item of userStats?.countries_visited; track item){
-            <div id="placeVisited">
+            @for(item of userStats?.countries_visited; track item; let i=$index){
+            <div id="placeVisited" [class]="i % 2 == 0 ? 'shade' : ''">
                 <div id="placeContainer">
                     <img src="../../assets/flags/{{item.alpha2}}.svg" class="flag" />
                     <p>{{item.place_visited}}</p>
