@@ -1,67 +1,70 @@
-<div id="mainContainer">
-    <div id="goalsSection">
-        <div id="profileSection">
-            <div id="profileBadgeSection">
-                <img id="profilePic" src={{auth.currentUser?.photoURL}}>
-                <div id="badgeContainer">
-                    <h1 id="profileName">{{auth.currentUser?.displayName}}</h1>
-                    <p id="userRole" [class]="userStats?.role == 'CREATOR' ? 'creator' : 'explorer' ">
-                        {{userStats?.role}}
-                    </p>
+@if(userStats !== undefined){
+    <div id="mainContainer">
+        <div id="goalsSection">
+            <div id="profileSection">
+                <div id="profileBadgeSection">
+                    <img id="profilePic" src={{auth.currentUser?.photoURL}}>
+                    <div id="badgeContainer">
+                        <h1 id="profileName">{{auth.currentUser?.displayName}}</h1>
+                        <p id="userRole" [class]="userStats?.role == 'CREATOR' ? 'creator' : 'explorer' ">
+                            {{userStats?.role}}
+                        </p>
+                    </div>
+                    <div id="progressBars">
+                        @if(userStats !== undefined && userStats.countries_goal.quantity !== undefined){
+                        <app-progress-bar [visited]="userStats.total_no_countries_visited"
+                            [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>
+                        }
+                        @if(userStats !== undefined && userStats.places_goal.quantity !== undefined){
+                        <app-progress-bar [visited]="userStats.total_no_places_visited"
+                            [goal]="userStats.places_goal.quantity" [title]="placesGoalTitle"></app-progress-bar>
+                        }
+                    </div>
                 </div>
-                <div id="progressBars">
-                    @if(userStats !== undefined && userStats.countries_goal.quantity !== undefined){
-                    <app-progress-bar [visited]="userStats.total_no_countries_visited"
-                        [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>
-                    }
-                    @if(userStats !== undefined && userStats.places_goal.quantity !== undefined){
-                    <app-progress-bar [visited]="userStats.total_no_places_visited"
-                        [goal]="userStats.places_goal.quantity" [title]="placesGoalTitle"></app-progress-bar>
-                    }
+    
+    
+                <div id="editSection">
+                    <button id="editProfileButton" class="button" (click)="editProfile()">Edit Profile</button>
+                </div>
+    
+    
+            </div>
+            <div id="calculatedStats">
+                <div class="shade">
+                    <p class="statHeader">Estimated age to hit Countries Goal</p>
+                    <p class="statBody">{{userStats.countries_goal_estimate}}</p>
+                </div>
+                <div class="shade">
+                    <p class="statHeader">Estimated age to hit Places Goal</p>
+                    <p class="statBody">{{userStats.places_goal_estimate}}</p>
+                </div>
+                <div class="shade">
+                    <p class="statHeader">Best Year Streak (Places)</p>
+                    <p class="statBody">{{userStats.best_year_streak}}</p>
                 </div>
             </div>
-
-
-            <div id="editSection">
-                <button id="editProfileButton" class="button" (click)="editProfile()">Edit Profile</button>
-            </div>
-
-
         </div>
-        <div id="calculatedStats">
-            <div>
-                <p class="statHeader">Estimated age to hit Countries Goal</p>
-                <p class="statBody">{{userStats.countries_goal_estimate}}</p>
-            </div>
-            <div>
-                <p class="statHeader">Estimated age to hit Places Goal</p>
-                <p class="statBody">{{userStats.places_goal_estimate}}</p>
-            </div>
-            <div>
-                <p class="statHeader">Best Year Streak (Places)</p>
-                <p class="statBody">{{userStats.best_year_streak}}</p>
-            </div>
-        </div>
-    </div>
-    <div id="placesVisitedSection">
-        <h1>Places Visited</h1>
-        @if(userStats !== undefined && userStats.countries_visited.length > 0){
-        <div id="placesVisited">
-            <p class="statHeader">Date visited</p>
-            @for(item of userStats?.countries_visited; track item; let i=$index){
-            <div id="placeVisited" [class]="i % 2 == 0 ? 'shade' : ''">
-                <div id="placeContainer">
-                    <img src="../../assets/flags/{{item.alpha2}}.svg" class="flag" />
-                    <p>{{item.place_visited}}</p>
+        <div id="placesVisitedSection">
+            <div class="bar"></div>
+            <h2>Places Visited</h2>
+            @if(userStats !== undefined && userStats.countries_visited.length > 0){
+            <div id="placesVisited">
+                <p class="statHeader">Date visited</p>
+                @for(item of userStats?.countries_visited; track item; let i=$index){
+                <div id="placeVisited" [class]="i % 2 == 0 ? 'shade' : ''">
+                    <div id="placeContainer">
+                        <img src="../../assets/flags/{{item.alpha2}}.svg" class="flag" />
+                        <p>{{item.place_visited}}</p>
+                    </div>
+                    <p>{{item.date_visited | date : "mediumDate"}}</p>
                 </div>
-                <p>{{item.date_visited | date : "mediumDate"}}</p>
+                }
+    
             </div>
+            } @else{
+            <p>Looks like you haven't added any places yet! Click the 'Edit Profile' button to begin</p>
             }
-
+    
         </div>
-        } @else{
-        <p>Looks like you haven't added any places yet! Click the 'Edit Profile' button to begin</p>
-        }
-
     </div>
-</div>
+}
