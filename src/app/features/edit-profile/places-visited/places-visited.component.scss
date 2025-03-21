@@ -37,6 +37,10 @@ input {
     height: 3rem;
 }
 
+.small-view {
+    display: none;
+}
+
 
 @media (max-width: 475px) {
     p {
@@ -140,10 +144,27 @@ input {
         text-align: center;
     }
 
+    select {
+        text-align: center;
+        width: 84%;
+    }
+
     #placeVisitedRecord {
         height: inherit;
         flex-direction: column;
         align-items: center;
+    }
+
+    .delete {
+        width: 82%
+    }
+
+    .large-view {
+        display: none;
+    }
+
+    .small-view {
+        display: inline;
     }
 
 }
