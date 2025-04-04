@@ -1,0 +1,25 @@
+#modal, body{
+    background-color:blue;
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#appleIcon{
+    height:1.5rem;
+    width:1.5rem;
+}
+
+svg{
+    margin-right:0.25rem;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:10rem;
+}
