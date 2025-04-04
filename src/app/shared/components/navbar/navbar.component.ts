@@ -16,11 +16,14 @@ export class NavbarComponent {
   router: Router = inject(Router);
   authenticationService: AuthenticationService = inject(AuthenticationService);
   doShowDropdown: boolean = false;
+  doShowLoginModal: boolean = false;
 
   async Login() {
     if (this.auth.currentUser !== null) {
       this.router.navigate(['/profile']);
-    } else if (await this.authenticationService.signInWithGoogle() !== undefined) {
+    } else {
+      this.doShowLoginModal = !this.doShowLoginModal;
+      await this.authenticationService.signInWithGoogle() !== undefined
       this.router.navigate(['/profile']);
     }
   }
