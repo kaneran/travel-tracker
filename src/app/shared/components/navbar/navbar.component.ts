@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../core/services/authentication.service';
@@ -16,7 +16,8 @@ export class NavbarComponent {
   router: Router = inject(Router);
   authenticationService: AuthenticationService = inject(AuthenticationService);
   doShowDropdown: boolean = false;
-  doShowLoginModal: boolean = false;
+
+  @Input() doShowLoginModal: boolean = false;
 
   async Login() {
     if (this.auth.currentUser !== null) {

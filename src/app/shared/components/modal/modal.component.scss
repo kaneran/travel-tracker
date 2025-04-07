@@ -1,5 +1,9 @@
+#modal{
+    position: relative;
+}
+
 #modal, body{
-    background-color:blue;
+    background-color:rgb(30, 30, 146);
 }
 
 body{
@@ -22,4 +26,15 @@ button{
     justify-content: center;
     align-items: center;
     width:10rem;
+}
+
+h1{
+    text-align: center;
+    margin:0%;
+}
+
+.bar{
+    width:100%;
+    margin:0%;
+    background-color:rgb(15, 15, 91);
 }
