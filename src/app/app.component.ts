@@ -22,6 +22,7 @@ export class AppComponent {
   auth: Auth = inject(Auth);
   countries$: Country[];
   functions: Functions = inject(Functions);
+  doShowLoginModal: boolean;
 
   // constructor(travelDataService: TravelDataService) {
 

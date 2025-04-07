@@ -9,5 +9,4 @@ import { ModalComponent } from '../../shared/components/modal/modal.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  doShowLoginModal: boolean = true;
 }
