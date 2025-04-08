@@ -1,40 +1,107 @@
-#modal{
-    position: relative;
+#modal {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 27%;
+  margin-top: 20%;
+  width: 50%;
+  border-radius: 0.3rem;
+  //   animation: fadein 1.5s;
 }
 
-#modal, body{
-    background-color:rgb(30, 30, 146);
+@keyframes fadein {
+  from {
+    opacity: 0;
+    margin-left: 0;
+  }
+  to {
+    opacity: 1;
+    margin-left: 27%;
+  }
 }
 
-body{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+#modal,
+body {
+  background-color: rgb(30, 30, 146);
 }
 
-#appleIcon{
-    height:1.5rem;
-    width:1.5rem;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-svg{
-    margin-right:0.25rem;
+#appleIcon {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:10rem;
+svg {
+  margin-right: 0.25rem;
 }
 
-h1{
-    text-align: center;
-    margin:0%;
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  margin-bottom: 0.5rem;
+  height: 2.5rem;
+  font-weight: bolder;
+  font-size: medium;
+  border-color: #419eea;
+  border-radius: 0.5rem;
 }
 
-.bar{
-    width:100%;
-    margin:0%;
-    background-color:rgb(15, 15, 91);
+h1 {
+  text-align: center;
+  margin: 0%;
+}
+
+.bar {
+  width: 100%;
+  margin: 0%;
+  background-color: rgb(15, 15, 91);
+}
+
+@media (max-width: 1536px) {
+}
+
+/* xl */
+@media (max-width: 1280px) {
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  #modal {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  #modal {
+    width: 80%;
+    margin-left: 9%;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  #modal {
+    width: 90%;
+    margin-left: 4%;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  #modal {
+    width: 95%;
+    margin-left: 0.5%;
+  }
 }
