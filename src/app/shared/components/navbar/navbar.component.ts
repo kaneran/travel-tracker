@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, model, } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../core/services/authentication.service';
@@ -17,13 +17,13 @@ export class NavbarComponent {
   authenticationService: AuthenticationService = inject(AuthenticationService);
   doShowDropdown: boolean = false;
 
-  @Input() doShowLoginModal: boolean = false;
+  doShowLoginModal = model<boolean>(false);
 
   async Login() {
     if (this.auth.currentUser !== null) {
       this.router.navigate(['/profile']);
     } else {
-      this.doShowLoginModal = !this.doShowLoginModal;
+      this.doShowLoginModal.update(showLogin => !showLogin);
       await this.authenticationService.signInWithGoogle() !== undefined
       this.router.navigate(['/profile']);
     }
