@@ -11,10 +11,10 @@
       } -->
       
     </main>
-    
-    <router-outlet />
     @if(doShowLoginModal){
       <div class="modal-background"></div>
       <app-modal></app-modal>
     }
+    <router-outlet />
+    
 <app-toasts></app-toasts>
