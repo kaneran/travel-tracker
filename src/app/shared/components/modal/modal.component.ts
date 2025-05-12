@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
-
+  closeModal() {
+    console.log("Close modal");
+  }
 }
