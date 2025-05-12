@@ -12,6 +12,21 @@
   //   animation: fadein 1.5s;
 }
 
+#modalHeaderSection {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+#closeModalButton {
+  background-color: transparent;
+  color: #f3f4f4;
+  border-color: #f59a2b;
+  width: auto;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 0.75rem;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

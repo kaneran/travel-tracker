@@ -16,6 +16,7 @@ export class NavbarComponent {
   router: Router = inject(Router);
   authenticationService: AuthenticationService = inject(AuthenticationService);
   doShowDropdown: boolean = false;
+  doShowModal: boolean = false;
 
   doShowLoginModal = model<boolean>(false);
 
@@ -24,6 +25,7 @@ export class NavbarComponent {
       this.router.navigate(['/profile']);
     } else {
       this.doShowLoginModal.update(showLogin => !showLogin);
+      this.doShowModal = !this.doShowModal;
       await this.authenticationService.signInWithGoogle() !== undefined
       this.router.navigate(['/profile']);
     }

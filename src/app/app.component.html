@@ -1,20 +1,10 @@
-
 <main class="main">
-  <!-- <button (click)="GetCountries()">Countries</button>
-  <button (click)="UpdatePlacesVisited()">Update Places</button> -->
-  <app-navbar [(doShowLoginModal)]="doShowLoginModal"/>
-  <!-- @if(auth.currentUser == null){
-    }
-    
-    @if(auth.currentUser != null){
-      <p>{{auth.currentUser.displayName}}</p>
-      } -->
-      
-    </main>
-    @if(doShowLoginModal){
-      <div class="modal-background"></div>
-      <app-modal></app-modal>
-    }
-    <router-outlet />
-    
+  <app-navbar [(doShowLoginModal)]="doShowLoginModal" />
+</main>
+@if(doShowLoginModal){
+<div class="modal-background"></div>
+<app-modal></app-modal>
+}
+<router-outlet />
+
 <app-toasts></app-toasts>
