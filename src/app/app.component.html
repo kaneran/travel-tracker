@@ -1,9 +1,11 @@
+@if(doShowLoginModal){
+<div class="modal-background"></div>
+}
 <main class="main">
   <app-navbar [(doShowLoginModal)]="doShowLoginModal" />
 </main>
 @if(doShowLoginModal){
-<div class="modal-background"></div>
-<app-modal></app-modal>
+<app-modal [(doShowLoginModal)]="doShowLoginModal"></app-modal>
 }
 <router-outlet />
 

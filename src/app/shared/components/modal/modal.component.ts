@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
+
+  doShowLoginModal = model<boolean>(false);
+
   closeModal() {
-    console.log("Close modal");
+    this.doShowLoginModal.update(showLoginModal => !showLoginModal);
   }
 }

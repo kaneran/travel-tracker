@@ -1,16 +1,19 @@
-@if(doShowModal){
-  <div class="modal-background"></div>
-}
 <nav id="container">
   @if(auth.currentUser){
   <div class="dropdown">
-    <img id="profilePic" src={{auth.currentUser?.photoURL}} (click)="updateDropdownToggle()">
-    <div class="dropdown-content" [class]="doShowDropdown ? 'showContent' : 'hideContent'">
+    <img
+      id="profilePic"
+      src="{{ auth.currentUser?.photoURL }}"
+      (click)="updateDropdownToggle()"
+    />
+    <div
+      class="dropdown-content"
+      [class]="doShowDropdown ? 'showContent' : 'hideContent'"
+    >
       <a href="/profile">Profile</a>
       <a href="#" (click)="Logout()">Logout</a>
     </div>
   </div>
-
   } @else{
   <button (click)="Login()" class="button">Login</button>
   }

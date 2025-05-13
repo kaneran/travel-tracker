@@ -9,32 +9,29 @@
   margin-top: 20%;
   width: 50%;
   border-radius: 0.3rem;
-  //   animation: fadein 1.5s;
-}
-
-#modalHeaderSection {
-  display: flex;
-  width: 100%;
-  justify-content: end;
 }
 
 #closeModalButton {
   background-color: transparent;
-  color: #f3f4f4;
-  border-color: #f59a2b;
+  color: #f90667;
+  border-color: #ee327d;
   width: auto;
   margin: 0.5rem 0.5rem 0.5rem 0;
-  font-size: 0.75rem;
+  border-width: 0.25rem;
+  padding: 0 0.5rem 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+#closeModalButton:hover {
+  animation: fadein 0.5s forwards;
 }
 
 @keyframes fadein {
   from {
-    opacity: 0;
-    margin-left: 0;
   }
   to {
-    opacity: 1;
-    margin-left: 27%;
+    background-color: #ee327d;
+    color: #f3f4f4;
   }
 }
 
@@ -58,6 +55,14 @@ svg {
   margin-right: 0.25rem;
 }
 
+#modal > * {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+#policyMessage {
+  font-size: 0.9rem;
+}
+
 button {
   display: flex;
   justify-content: center;
@@ -67,6 +72,7 @@ button {
   height: 2.5rem;
   font-weight: bolder;
   font-size: medium;
+  border-style: solid;
   border-color: #419eea;
   border-radius: 0.5rem;
 }
