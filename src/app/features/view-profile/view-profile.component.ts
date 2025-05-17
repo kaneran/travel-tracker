@@ -21,6 +21,7 @@ export class ViewProfileComponent {
   placesGoalTitle2: string = 'abc';
   userStats: UserStatDetails;
   template: any;
+  photoURL: string = '';
 
 
   constructor(travelDataService: TravelDataService) {
@@ -32,6 +33,12 @@ export class ViewProfileComponent {
       this.userStats = data as UserStatDetails;
       console.log(this.userStats);
     });
+  }
+
+  getPhotoURL() {
+    if (this.photoURL == '')
+      this.photoURL = this.auth.currentUser?.photoURL || '';
+    return this.photoURL;
   }
 
   editProfile() {
