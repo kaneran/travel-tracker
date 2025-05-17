@@ -24,8 +24,6 @@ export class NavbarComponent {
       this.router.navigate(['/profile']);
     } else {
       this.doShowLoginModal.update(showLogin => !showLogin);
-      await this.authenticationService.signInWithGoogle() !== undefined
-      this.router.navigate(['/profile']);
     }
   }
 

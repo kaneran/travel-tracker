@@ -3,7 +3,7 @@
         <div id="goalsSection">
             <div id="profileSection">
                 <div id="profileBadgeSection">
-                    <img id="profilePic" src={{auth.currentUser?.photoURL}}>
+                    <img id="profilePic" [src]="getPhotoURL()">
                     <div id="badgeContainer">
                         <h1 id="profileName">{{auth.currentUser?.displayName}}</h1>
                         <p id="userRole" [class]="userStats?.role == 'CREATOR' ? 'creator' : 'explorer' ">
