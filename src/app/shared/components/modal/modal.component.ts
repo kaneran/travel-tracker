@@ -16,6 +16,7 @@ export class ModalComponent {
   router: Router = inject(Router);
   authenticationService: AuthenticationService = inject(AuthenticationService);
   email: string = "";
+  emailSent: boolean = false;
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
@@ -32,6 +33,9 @@ export class ModalComponent {
 
   async handleSend() {
     console.log(this.email);
+    const url = window.location.href;
+    console.log(url);
+    this.emailSent = await this.authenticationService.sendPasswordlessEmail(this.email, url);
   }
 
   async signInWithGoogle() {

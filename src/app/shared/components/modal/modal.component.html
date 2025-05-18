@@ -3,8 +3,13 @@
   <div class="bar"></div>
   <body>
     <!-- Credit goes to Fireship for the svg icons, src - https://github.com/fireship-io/fireship.io  -->
-     <input placeholder="Enter email address" [(ngModel)]="email"/>
-     <button (click)="handleSend()" [disabled]="email === ''">Send</button>
+    <h2>With magic email link:</h2>
+    <input placeholder="Enter email address" [(ngModel)]="email" />
+    <button id="sendButton" (click)="handleSend()" [disabled]="email === ''" [class]="email === '' ? 'disabled' : ''">Send</button>
+    @if(emailSent){
+      <p id="magicLinkMessage">Magic link has been sent to {{email}}</p>
+    }
+    <h2>Or with account:</h2>
     <button class="button" (click)="signInWithGoogle()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
