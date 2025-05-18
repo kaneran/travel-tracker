@@ -6,9 +6,13 @@
   align-items: center;
   justify-content: center;
   margin-left: 27%;
-  margin-top: 20%;
+  margin-top: 10%;
   width: 50%;
   border-radius: 0.3rem;
+}
+
+::placeholder{
+  color:rgba(255, 255, 255, 0.848);
 }
 
 #closeModalButton {
@@ -77,9 +81,39 @@ button {
   border-radius: 0.5rem;
 }
 
+#sendButton{
+  color: white;
+  background-color: #5181cc;
+  border:0;
+  cursor: pointer;
+}
+
+#magicLinkMessage{
+  color: #3bee3b;
+}
+
+#sendButton.disabled{
+  background-color: #375179;
+  cursor: not-allowed;
+}
+
 h1 {
   text-align: center;
   margin: 0%;
+}
+
+h2{
+  font-size: large;
+}
+
+input{
+  background-color: #15127d;
+  color: white;
+  width: 20rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  border-color: white;
 }
 
 .bar {
