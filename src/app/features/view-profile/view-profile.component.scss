@@ -40,6 +40,14 @@
   width: 11rem;
   border-radius: 100%;
   margin-right: 0.5rem;
+  background-color: #5909e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profilePic > * {
+  font-size: 5rem;
 }
 
 #statsSection {

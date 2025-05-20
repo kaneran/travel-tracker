@@ -3,19 +3,21 @@
         <div id="goalsSection">
             <div id="profileSection">
                 <div id="profileBadgeSection">
-                    <img id="profilePic" [src]="getPhotoURL()">
+                    <div id="profilePic">
+                        <p>{{auth.currentUser?.displayName | profileIconLabel}}</p>
+                    </div>
                     <div id="badgeContainer">
                         <h1 id="profileName">{{auth.currentUser?.displayName}}</h1>
                         <p id="userRole" [class]="userStats?.role == 'CREATOR' ? 'creator' : 'explorer' ">
-                            {{userStats?.role}}
+                            {{userStats?.role ?? 'EXPLORER'}}
                         </p>
                     </div>
                     <div id="progressBars">
-                        @if(userStats !== undefined && userStats.countries_goal.quantity !== undefined){
+                        @if(userStats !== undefined && userStats.countries_goal !== undefined && userStats.countries_goal.quantity !== undefined){
                         <app-progress-bar [visited]="userStats.total_no_countries_visited"
                             [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>
                         }
-                        @if(userStats !== undefined && userStats.places_goal.quantity !== undefined){
+                        @if(userStats !== undefined && userStats.places_goal !== undefined && userStats.places_goal.quantity !== undefined){
                         <app-progress-bar [visited]="userStats.total_no_places_visited"
                             [goal]="userStats.places_goal.quantity" [title]="placesGoalTitle"></app-progress-bar>
                         }
@@ -32,15 +34,15 @@
             <div id="calculatedStats">
                 <div class="shade">
                     <p class="statHeader">Estimated age to hit Countries Goal</p>
-                    <p class="statBody">{{userStats.countries_goal_estimate}}</p>
-                </div>
+                        <p class="statBody">{{userStats.countries_goal_estimate ?? 'NA'}}</p>
+                    </div>
                 <div class="shade">
                     <p class="statHeader">Estimated age to hit Places Goal</p>
-                    <p class="statBody">{{userStats.places_goal_estimate}}</p>
+                    <p class="statBody">{{userStats.places_goal_estimate ?? 'NA'}}</p>
                 </div>
                 <div class="shade">
                     <p class="statHeader">Best Year Streak (Places)</p>
-                    <p class="statBody">{{userStats.best_year_streak}}</p>
+                    <p class="statBody">{{userStats.best_year_streak ?? 'NA'}}</p>
                 </div>
             </div>
         </div>
@@ -62,7 +64,7 @@
     
             </div>
             } @else{
-            <p>Looks like you haven't added any places yet! Click the 'Edit Profile' button to begin</p>
+            <p>Looks like you haven't added any places yet! Click the 'Edit Profile' button to begin the journey.</p>
             }
     
         </div>

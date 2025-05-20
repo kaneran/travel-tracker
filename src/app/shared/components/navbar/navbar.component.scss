@@ -39,10 +39,19 @@ button:hover {
   display: none;
 }
 
+
 #profilePic {
-  border-radius: 100%;
   width: 4rem;
   height: 4rem;
+  border-radius: 100%;
+  background-color: #5909e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profilePic > * {
+  font-size: 2rem;
 }
 
 #dropdownContent {

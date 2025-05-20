@@ -2,12 +2,13 @@ import { Component, inject, model, } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../core/services/authentication.service';
+import { ProfileIconLabelPipe } from '../../pipes/profile-icon-label.pipe';
 
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [ProfileIconLabelPipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
