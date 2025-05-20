@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from '../../shared/components/progress-bar/progress-bar.component';
 import { TravelDataService, UserStatDetails } from '../../core/services/travel-data.service';
+import { ProfileIconLabelPipe } from '../../shared/pipes/profile-icon-label.pipe';
 
 @Component({
   selector: 'app-view-profile',
   standalone: true,
-  imports: [ProgressBarComponent, CommonModule],
+  imports: [ProgressBarComponent, CommonModule, ProfileIconLabelPipe],
   templateUrl: './view-profile.component.html',
   // template: getTemplate(),
   styleUrl: './view-profile.component.scss'
