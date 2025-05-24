@@ -10,7 +10,7 @@
       <p id="magicLinkMessage">Magic link has been sent to {{email}}</p>
     }
     <h2>Or with account:</h2>
-    <button class="button" (click)="signInWithGoogle()">
+    <button id="googleButton" class="button" (click)="signInWithGoogle()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -38,8 +38,11 @@
       </svg>
       Google
     </button>
+    <h2>Or explore without an account:</h2>
+    <button id="guestButton" class="button">Explore as guest</button>
   </body>
   <div class="bar"></div>
+
   <p id="policyMessage">
     By signing in, you agree to Travel Traker's terms of service and privacy
     policy.

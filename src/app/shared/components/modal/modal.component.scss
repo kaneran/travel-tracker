@@ -16,9 +16,9 @@
 }
 
 #closeModalButton {
-  background-color: transparent;
-  color: #f90667;
-  border-color: #ee327d;
+  background-color: #d2316a;
+  color: #f3f4f4;
+  border-style: none;
   width: auto;
   margin: 0.5rem 0.5rem 0.5rem 0;
   border-width: 0.25rem;
@@ -27,17 +27,10 @@
 }
 
 #closeModalButton:hover {
-  animation: fadein 0.5s forwards;
+  background-color: #cf3a7c;
+  color: #f3f4f4;
 }
 
-@keyframes fadein {
-  from {
-  }
-  to {
-    background-color: #ee327d;
-    color: #f3f4f4;
-  }
-}
 
 #modal,
 body {
@@ -81,21 +74,48 @@ button {
   border-radius: 0.5rem;
 }
 
+#googleButton{
+  background-color: #ffffff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+#googleButton:hover{
+  background-color: #e8eaed;
+}
+
 #sendButton{
   color: white;
-  background-color: #5181cc;
+  background-color: #866aff;
   border:0;
   cursor: pointer;
+}
+
+#sendButton.disabled{
+  background-color: #4c4c80;
+  color: #cfcfe6;
+  cursor: not-allowed;
+}
+
+#sendButton:hover{
+  background-color: #9b7dff;
+}
+
+#guestButton{
+  color:white;
+  background-color: #a884ff;
+  border-style: none;
+  width:auto;
+}
+
+#guestButton:hover{
+  background-color: #c5a9ff;
 }
 
 #magicLinkMessage{
   color: #3bee3b;
 }
 
-#sendButton.disabled{
-  background-color: #375179;
-  cursor: not-allowed;
-}
 
 h1 {
   text-align: center;
