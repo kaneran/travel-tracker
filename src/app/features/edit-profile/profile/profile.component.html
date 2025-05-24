@@ -1,5 +1,5 @@
 <div id="container">
-    <h1>Profile</h1>
+    <p id="message">Set your sights! 🎯 This is where you can create and fine-tune your travel goals to stay inspired and on track.</p>
     <div id="goalsContainer">
         <h2>Goals</h2>
         <div class="bar"></div>
@@ -20,7 +20,7 @@
         </div>
     </form>
     <div id="formButtons">
-      <button class="button button-save" (click)="saveChanges()" [disabled]="!profileForm.valid" [class]="!profileForm.valid ? 'disabled' : ''">Save Changes</button>
+      <button class="button button-save" (click)="saveChanges()" [disabled]="!profileForm.valid" [class]="!profileForm.valid ? 'disabled' : ''">Save</button>
       <button *ngIf="deletedRecord != undefined" class="button" (click)="undoPreviousChange()">Undo</button>
     </div>
 </div>

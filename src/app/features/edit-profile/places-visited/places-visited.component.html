@@ -1,5 +1,5 @@
 <div id="container">
-<h1>Places visited</h1>
+ <p id="message">Track your travels! 🌍 Record every place you've visited and see how close you are to reaching your travel goals.</p>
     <form [formGroup]="placesVisitedForm">
        <div formArrayName="placesVisited" *ngFor="let placeVisited of placesVisited.controls; let i=index">
         <div [formGroupName]="i" id="placeVisitedRecord">
@@ -26,7 +26,7 @@
     </form>
     <div id="formButtons">
       <button class="button button-success" (click)="addRecord()">Add</button>
-      <button class="button button-save" (click)="saveChanges()" [disabled]="!placesVisitedForm.valid" [class]="!placesVisitedForm.valid ? 'disabled' : ''">Save Changes</button>
+      <button class="button button-save" (click)="saveChanges()" [disabled]="!placesVisitedForm.valid" [class]="!placesVisitedForm.valid ? 'disabled' : ''">Save</button>
       <button *ngIf="deletedRecord != undefined" class="button" (click)="undoPreviousChange()">Undo</button>
       <!-- <button class="button" (click)="displayModal(placesVisited.controls[0])">{{placesVisitedForm.valid}}</button> -->
     </div>

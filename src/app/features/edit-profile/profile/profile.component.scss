@@ -26,7 +26,6 @@ form {
 input {
     width: 5rem;
     font-size: 1.5rem;
-    background: transparent;
     color: white;
     border-radius: 0.3rem;
     text-align: center;
@@ -35,7 +34,6 @@ input {
 select {
     width: 10rem;
     font-size: 1.5rem;
-    background: transparent;
     color: white;
     border-radius: 0.3rem;
 }
@@ -107,15 +105,6 @@ select {
 
     .goalText {
         font-size: 1rem;
-    }
-
-    #formButtons{
-        text-align: center;
-    }
-
-    #formButtons button{
-        font-size:small;
-        width:10rem;
     }
 
 }
