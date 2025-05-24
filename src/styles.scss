@@ -53,6 +53,13 @@ input.error {
   cursor: not-allowed;
 }
 
+form input,
+form select {
+  background: #1a1e3f;
+  box-shadow:
+    0 0 9px 2.5px #866aff4d,
+}
+
 #formButtons button {
   margin: 0.5rem;
   width: 11rem;
@@ -76,12 +83,12 @@ input.error {
   margin-left: 0.5rem;
 }
 
-.modal-background{
-    background-color: #070d29;
-    opacity: 0.89;
-    position: absolute;
-    height:100%;
-    width:100%;
+.modal-background {
+  background-color: #070d29;
+  opacity: 0.89;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 h1,
@@ -151,6 +158,19 @@ a {
   p {
     font-size: 0.75rem;
   }
+
+  #message {
+    font-size: medium;
+  }
+
+  #formButtons {
+    text-align: center;
+  }
+
+  #formButtons button {
+    font-size: large;
+    width: 10rem;
+  }
 }
 
 .flag {
@@ -173,6 +193,7 @@ a {
 select option {
   background: #070d29;
 }
+
 
 .statHeader {
   color: #d9d9d9;

@@ -1,10 +1,10 @@
 <nav id="container">
   @if(auth.currentUser){
-  <div class="dropdown" (mouseleave)="doShowDropdown = false" (mouseenter)="doShowDropdown = true" >
-    <div id="profilePic" class="profile-icon" (click)="updateDropdownToggle()">
+  <div class="dropdown">
+    <div id="profilePic" class="profile-icon" (mouseenter)="doShowDropdown = true" (click)="updateDropdownToggle()">
       <p>{{ auth.currentUser?.displayName | profileIconLabel }}</p>
     </div>
-    <div class="dropdown-content" [class.show]="doShowDropdown">
+    <div class="dropdown-content" (mouseleave)="doShowDropdown = false"  [class.show]="doShowDropdown">
       <a href="/profile">Profile</a>
       <a href="#" (click)="Logout()">Logout</a>
     </div>

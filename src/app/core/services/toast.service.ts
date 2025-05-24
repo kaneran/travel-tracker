@@ -12,6 +12,7 @@ export class ToastService {
   addToast(toast: Toast) {
     toast.id = crypto.randomUUID();
     this.toasts.push(toast);
+    console.log(this.toasts);
     setTimeout(() => this.removeToastById(toast.id), 6000);
   }
 
@@ -21,6 +22,8 @@ export class ToastService {
   }
 
   removeToastById(id: string) {
+    console.log(id);
+    console.log(this.toasts);
     this.toasts = this.toasts.filter(t => t.id !== id);
   }
 }
