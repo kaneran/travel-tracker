@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { environment } from '../../../environments/environment';
-import { getAuth, GoogleAuthProvider, isSignInWithEmailLink, sendSignInLinkToEmail, signInWithEmailLink, signInWithPopup, signOut, User, UserCredential } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, isSignInWithEmailLink, sendSignInLinkToEmail, signInAnonymously, signInWithEmailLink, signInWithPopup, signOut, User, UserCredential } from 'firebase/auth';
 import { connectFunctionsEmulator, Functions, getFunctions, httpsCallable } from 'firebase/functions';
 import { Toast, ToastService, ToastType } from './toast.service';
 import { TravelDataService } from './travel-data.service';
@@ -44,6 +44,11 @@ export class AuthenticationService {
         return await this.loginHandler(credential);
       }
     } return;
+  }
+
+  async signInAsGuest() {
+    const credential = signInAnonymously(this.auth);
+    return await this.loginHandler(credential);
   }
 
   async signInWithGoogle() {

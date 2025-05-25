@@ -43,4 +43,11 @@ export class ModalComponent {
     this.doShowLoginModal.update(showLogin => !showLogin);
     this.router.navigate(['/profile']);
   }
+
+  async signInAsGuest() {
+    await this.authenticationService.signInAsGuest();
+    this.doShowLoginModal.update(showLogin => !showLogin);
+    this.router.navigate(['/profile']);
+
+  }
 }

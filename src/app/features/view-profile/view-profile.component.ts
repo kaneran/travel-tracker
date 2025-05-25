@@ -43,7 +43,6 @@ export class ViewProfileComponent {
   }
 
   editProfile() {
-    console.log("You clicked me");
     this.router.navigate(['/editprofile']);
   }
 
