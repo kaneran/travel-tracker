@@ -36,16 +36,16 @@ export class ProfileComponent {
   private updateProfileForm(userStats: UserStatDetails) {
     this.goals.push(this.formBuilder.group({
       action: "",
-      quantity: this.formBuilder.control(userStats.countries_goal.quantity, [Validators.required, Validators.min(1)]),
+      quantity: this.formBuilder.control(userStats.countries_goal?.quantity, [Validators.required, Validators.min(1)]),
       countryOrPlace: this.formBuilder.control("countries", Validators.required),
-      age: this.formBuilder.control(userStats.countries_goal.age, [Validators.required, Validators.min(16)])
+      age: this.formBuilder.control(userStats.countries_goal?.age, [Validators.required, Validators.min(16)])
     }))
 
     this.goals.push(this.formBuilder.group({
       action: "",
-      quantity: this.formBuilder.control(userStats.places_goal.quantity, [Validators.required, Validators.min(1)]),
+      quantity: this.formBuilder.control(userStats.places_goal?.quantity, [Validators.required, Validators.min(1)]),
       countryOrPlace: this.formBuilder.control("places", Validators.required),
-      age: this.formBuilder.control(userStats.places_goal.age, [Validators.required, Validators.min(16)])
+      age: this.formBuilder.control(userStats.places_goal?.age, [Validators.required, Validators.min(16)])
     }))
   }
 
@@ -91,7 +91,7 @@ export class ProfileComponent {
 
     let goals = [...this.profileForm.value.goals];
     goals.forEach(goal => {
-      let formGoal = { quantity: goal.quantity, age: goal.age } as Goal;
+      let formGoal = { quantity: goal?.quantity, age: goal?.age } as Goal;
       if (goal.countryOrPlace == "countries") {
         response.countries_goal = formGoal;
       } else if (goal.countryOrPlace == "places") {

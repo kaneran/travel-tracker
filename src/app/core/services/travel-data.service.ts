@@ -96,7 +96,7 @@ export class TravelDataService {
         return;
       }
       console.log("Execute function " + data.function_name);
-      connectFunctionsEmulator(functions, 'localhost', 5001);
+      // connectFunctionsEmulator(functions, 'localhost', 5001);
       const res = await httpsCallable(functions, 'invokeUserAPI')(data);
       return res.data as T;
     } catch (error) {

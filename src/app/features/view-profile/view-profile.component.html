@@ -13,14 +13,14 @@
                     </p>
                 </div>
                 <div id="progressBars">
-                    @if(userStats !== undefined && userStats.countries_goal !== undefined
-                    && userStats.countries_goal.quantity !== undefined){
+                    @if(userStats !== undefined && userStats.countries_goal !== null
+                    && userStats.countries_goal.quantity !== null){
                     <app-progress-bar [visited]="userStats.total_no_countries_visited"
                         [goal]="userStats.countries_goal.quantity" [title]="countriesGoalTitle"></app-progress-bar>
                     } @else{
                     <app-progress-bar [visited]="0" [goal]="0" [title]="countriesGoalTitle"></app-progress-bar>
-                    } @if(userStats !== undefined && userStats.places_goal !== undefined
-                    && userStats.places_goal.quantity !== undefined){
+                    } @if(userStats !== undefined && userStats.places_goal !== null
+                    && userStats.places_goal.quantity !== null){
                     <app-progress-bar [visited]="userStats.total_no_places_visited"
                         [goal]="userStats.places_goal.quantity" [title]="placesGoalTitle"></app-progress-bar>
                     } @else{
