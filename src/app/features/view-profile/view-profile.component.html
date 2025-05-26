@@ -7,7 +7,7 @@
                     <p>{{ auth.currentUser?.displayName | profileIconLabel }}</p>
                 </div>
                 <div id="badgeContainer">
-                    <h1 id="profileName">{{ auth.currentUser?.displayName }}</h1>
+                    <h1 id="profileName">{{ auth.currentUser?.displayName || "Guest" }}</h1>
                     <p id="userRole" [class]="userStats?.role == 'CREATOR' ? 'creator' : 'explorer'">
                         {{ userStats?.role ?? "EXPLORER" }}
                     </p>
@@ -37,11 +37,11 @@
         </div>
         <div id="calculatedStats">
             <div class="shade">
-                <p class="statHeader">Estimated age to hit Countries Goal</p>
+                <p class="statHeader">Estimated (years) to hit Countries Goal</p>
                 <p class="statBody">{{ userStats.countries_goal_estimate ?? "NA" }}</p>
             </div>
             <div class="shade">
-                <p class="statHeader">Estimated age to hit Places Goal</p>
+                <p class="statHeader">Estimated (years) to hit Places Goal</p>
                 <p class="statBody">{{ userStats.places_goal_estimate ?? "NA" }}</p>
             </div>
             <div class="shade">

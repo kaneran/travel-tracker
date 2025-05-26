@@ -1,164 +1,154 @@
 #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 // form{
 //     width:100%
 // }
 
-
 #placeVisitedRecord {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    border: #5271ff;
-    border-style: solid;
-    box-shadow:
-    0 0 10px 2.5px #160fec;
-    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
-    border-radius: 0.5rem;
-    height: 4rem;
-    align-items: baseline;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  border: #5271ff;
+  border-style: solid;
+  box-shadow: 0 0 10px 2.5px #160fec;
+  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+  border-radius: 0.5rem;
+  height: 4rem;
+  align-items: baseline;
 }
 
 select,
 input {
-    color: white;
-    font-family: "Teko", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    font-size: medium;
-    border-radius: 0.3rem;
-    margin-right: 0.75rem;
-    width: 19rem;
-    height: 3rem;
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: medium;
+  border-radius: 0.3rem;
+  margin-right: 0.75rem;
+  width: 19rem;
+  height: 3rem;
 }
 
 .small-view {
-    display: none;
+  display: none;
 }
-
 
 @media (max-width: 475px) {
-    p {
-        font-size: 0.75rem;
-    }
+  p {
+    font-size: 0.75rem;
+  }
 }
 
-@media (max-width: 1536px) {}
+@media (max-width: 1536px) {
+}
 
 /* xl */
 @media (max-width: 1280px) {
-
-    select,
-    input {
-        width: 18rem;
-    }
+  select,
+  input {
+    width: 18rem;
+  }
 }
 
 /* lg */
 @media (max-width: 1024px) {
-
-    select,
-    input {
-        width: 12rem;
-    }
-
+  select,
+  input {
+    width: 12rem;
+  }
 }
 
 /* md */
 @media (max-width: 768px) {
+  select {
+    width: 7rem;
+    // flex-grow:1;
+  }
 
-    select {
-        width: 6rem;
-        // flex-grow:1;
-    }
+  input {
+    width: 7rem;
+  }
 
-    input {
-        width: 6rem;
-    }
+  // #inputContainer{
+  //     flex-grow:1;
+  // }
 
-    // #inputContainer{
-    //     flex-grow:1;
-    // }
+  form {
+    width: 90%;
+  }
 
-    form {
-        width: 90%;
-    }
+  #validationMessage {
+    font-size: small;
+  }
 
-    #validationMessage {
-        font-size: small;
-    }
-
-    #placeVisitedRecord {
-        height: inherit;
-    }
+  #placeVisitedRecord {
+    height: inherit;
+  }
 }
 
 @media (max-width: 480px) {
-    input {
-        // width: 5rem;
+  #validationMessage {
+    font-size: medium;
+  }
 
-    }
+  #inputContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-    #inputContainer {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+  select {
+    // width: 9.5rem;
+  }
 
-    select {
-        // width: 9.5rem;
-    }
+  form {
+    width: 100%;
+  }
 
-   
+  input,
+  select {
+    margin-right: 0;
+    font-size: large;
+  }
 
-    form {
-        width: 100%;
-    }
+  select,
+  #inputContainer {
+    width: 90%;
+    margin-bottom: 0.5rem;
+  }
 
-    input,
-    select {
-        margin-right: 0;
-        font-size: large;
-    }
+  input {
+    width: inherit;
+  }
 
-    select,
-    #inputContainer {
-        width: 90%;
-        margin-bottom: 0.5rem;
-    }
+  select {
+    width: 84%;
+  }
 
-    input {
-        width: inherit;
-    }
+  #placeVisitedRecord {
+    height: inherit;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    select {
-        width: 84%;
-    }
+  .delete {
+    width: 82%;
+    font-size: large;
+    font-weight: 100;
+  }
 
-    #placeVisitedRecord {
-        height: inherit;
-        flex-direction: column;
-        align-items: center;
-    }
+  .large-view {
+    display: none;
+  }
 
-    .delete {
-        width: 82%;
-        font-size:large;
-        font-weight: 100;
-    }
-
-    .large-view {
-        display: none;
-    }
-
-    .small-view {
-        display: inline;
-    }
-
+  .small-view {
+    display: inline;
+  }
 }

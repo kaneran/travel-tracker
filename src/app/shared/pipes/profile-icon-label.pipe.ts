@@ -11,7 +11,7 @@ export class ProfileIconLabelPipe implements PipeTransform {
       let names: string[] = value.split(' ').map(name => name.charAt(0).toUpperCase());
       return names.join("");
     }
-    return 'O';
+    return 'G';
   }
 
 }
