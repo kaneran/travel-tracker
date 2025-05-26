@@ -48,7 +48,7 @@ export class AuthenticationService {
 
   async signInAsGuest() {
     const credential = signInAnonymously(this.auth);
-    return await this.loginHandler(credential);
+    return await this.loginHandler(credential, "You’re in as a guest. Saved data won’t carry over");
   }
 
   async signInWithGoogle() {
@@ -57,11 +57,11 @@ export class AuthenticationService {
     return await this.loginHandler(credential);
   }
 
-  async loginHandler(promise: Promise<UserCredential>) {
+  async loginHandler(promise: Promise<UserCredential>, successMessage?: string) {
     let res: UserCredential = {} as UserCredential;
     try {
       res = await promise;
-      const toast = { type: ToastType.SUCCESS, message: "Successfully logged in" } as Toast;
+      const toast = { type: ToastType.SUCCESS, message: successMessage ?? "Successfully logged in" } as Toast;
       this.toastService.addToast(toast);
       const data: UserAPI = { function_name: "getUserStats", payload: null } as UserAPI;
       await this.travelDataService.invokeUserAPI(data);
@@ -75,7 +75,7 @@ export class AuthenticationService {
   }
 
   async firebaseSignOut() {
-    await signOut(this.auth).then(() => console.log("sign out successful"));
+    await signOut(this.auth);
   }
 
 }
