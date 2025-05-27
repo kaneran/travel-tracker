@@ -70,7 +70,7 @@ export class TravelDataService {
   async getCountries(): Promise<Country[]> {
     //let countries: Country[] = [];
     let countriesCache = localStorage.getItem("countries");
-    if (countriesCache == null) {
+    if (countriesCache == null || countriesCache == undefined) {
       const data: UserAPI = { function_name: "getCountries", payload: null };
       const countries$ = await this.invokeUserAPI(data) as Country[];
       localStorage.setItem("countries", JSON.stringify(countries$));
