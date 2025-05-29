@@ -60,15 +60,10 @@ export class TravelDataService {
         countriesVisited.push(countryVisitedDetail);
       }
     });
-    //Mock data for now, so I can amend the layout accordingly
-    // countriesVisited.push({ country: countries.find(c => c.name === "Portugal"), alpha2: 'pt', date_visited: '2024-05-31' } as CountryVisitedDetail)
-    // countriesVisited.push({ country: countries.find(c => c.name === "United Arab Emirates"), alpha2: 'ae', date_visited: '2024-05-31' } as CountryVisitedDetail)
-    // countriesVisited.push({ country: countries.find(c => c.name === "India"), alpha2: 'in', date_visited: '2024-05-31' } as CountryVisitedDetail)
     return countriesVisited;
   }
 
   async getCountries(): Promise<Country[]> {
-    //let countries: Country[] = [];
     let countriesCache = localStorage.getItem("countries");
     if (countriesCache == null || countriesCache == undefined) {
       const data: UserAPI = { function_name: "getCountries", payload: null };
