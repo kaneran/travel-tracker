@@ -24,7 +24,7 @@ body {
 }
 
 input.error {
-  border-color: #e64040;
+  border-color: #ee5858;
 }
 
 .button {
@@ -36,13 +36,21 @@ input.error {
 }
 
 .button-success {
-  background-color: #00bf63;
+  background-color: #03ca6a;
   color: #f3f4f4;
+}
+
+.button-success:hover{
+  background-color: #049a51;
 }
 
 .button-save {
   background-color: #5271ff;
   color: #f3f4f4;
+}
+
+.button-save:hover{
+  background-color: #4560d7;
 }
 
 .button-save.disabled {
@@ -185,7 +193,7 @@ a {
 
 #validationMessage {
   margin: 0.3rem 0 0 0;
-  color: #e64040;
+  color: #ee5858;
 }
 
 select option {

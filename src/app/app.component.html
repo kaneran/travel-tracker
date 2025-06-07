@@ -4,9 +4,8 @@
 <main class="main">
   <app-navbar [(doShowLoginModal)]="doShowLoginModal" />
 </main>
+<app-toasts></app-toasts>
 @if(doShowLoginModal){
 <app-modal [(doShowLoginModal)]="doShowLoginModal"></app-modal>
 }
 <router-outlet />
-
-<app-toasts></app-toasts>

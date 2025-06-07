@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AuthGuard, redirectLoggedInTo } from '@angular/fire/auth-guard';
+import { AuthGuard } from '@angular/fire/auth-guard';
 import { HomeComponent } from './features/home/home.component';
 import { ViewProfileComponent } from './features/view-profile/view-profile.component';
 import { EditProfileComponent } from './features/edit-profile/edit-profile.component';

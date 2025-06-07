@@ -24,20 +24,4 @@ export class AppComponent {
   countries$: Country[];
   functions: Functions = inject(Functions);
   doShowLoginModal: boolean = false;
-
-  // constructor(travelDataService: TravelDataService) {
-
-  // }
-
-  // async GetCountries() {
-  //   travelDataService.getCountries().then(countries => {
-  //     this.countries$ = countries as Country[];
-  //     console.log(this.countries$);
-  //   });
-
-  // }
-
-  // async UpdatePlacesVisited() {
-  //   await updatePlacesVisited();
-  // }
 }

@@ -1,6 +1,5 @@
 import { inject, Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { AuthenticationService } from './authentication.service';
 import { connectFunctionsEmulator, Functions, getFunctions, httpsCallable } from 'firebase/functions';
 import { Toast, ToastService, ToastType } from './toast.service';
 import { FirebaseApp, initializeApp } from 'firebase/app';
@@ -37,10 +36,8 @@ export class TravelDataService {
       }
 
       this.userStatsResponse = userStatDetails;
-      // this.userStats = new BehaviorSubject(response);
     }
     return this.userStatsResponse;
-    // return this.userStats.asObservable();;
   }
 
   async getCountriesVisited(response: UserStat): Promise<CountryVisitedDetail[]> {
@@ -76,7 +73,6 @@ export class TravelDataService {
   }
 
   async updateUserStats(userStat: UserStat) {
-    // const userStat = { total_no_countries_visited: 0, total_no_places_visited: 0, countries_visited: [{ country_name: "Dubai", date_visted: "2023-10-29", positive_note: "Architecture, night life" }], goals: [] };
     const data: UserAPI = { function_name: "updateUserStats", payload: userStat };
     const updatedUserStat = await this.invokeUserAPI(data);
     this.userStatsResponse = updatedUserStat as UserStatDetails;
@@ -84,7 +80,6 @@ export class TravelDataService {
   }
 
   async invokeUserAPI<T>(data: UserAPI): Promise<T | undefined> {
-    //const { httpsCallable, getFunctions } =  import('firebase/functions');
     const functions: Functions = getFunctions();
     try {
       if (!this.auth.currentUser) {

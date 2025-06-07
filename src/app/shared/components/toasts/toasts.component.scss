@@ -1,11 +1,20 @@
 #toast{
     animation: fadein 2s, fadeout 5s 2s;
-    width: 20rem;
+    width: 25rem;
     text-align: center;
     background-color: #8dd78d;
     border-radius: 0.5rem;
     position:absolute;
-    // opacity: 0;
+}
+
+@keyframes fadein{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@keyframes fadeout{
+    from{opacity: 1; }
+    to{opacity: 0;}
 }
 
 #toast.success{
@@ -30,16 +39,6 @@
 
 #toast p.warning{
     color: #9b7b04;
-}
-
-@keyframes fadein{
-    from{opacity: 0; bottom: 0;}
-    to{opacity: 1; bottom: 20px;}
-}
-
-@keyframes fadeout{
-    from{opacity: 1; bottom: 20px;}
-    to{opacity: 0; bottom: 0;}
 }
 
 #toasts{
